@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{margin: 0; padding: 0;}
+	.wrap{width: 500px; height:637px; margin: 0 auto; background: url("img/iphone2.png") no-repeat; position: relative; color: #505050; font-size: 12px; line-height: 40px;}
+	#talk{width: 240px; height: 355px; position: absolute; top:140px; left: 128px; overflow: hidden;}
+	#emoji{width: 20px; height: 20px; position: absolute; bottom:115px; left: 135px;}
+	#text{width: 138px; height: 18px; position: absolute; left: 186px; bottom:116px; border:none;}
+	#sent{width: 30px; height: 20px; position: absolute; right: 140px; bottom: 116px; border:none; background: none; outline: medium;}
+	
+	#emojitext{ height: 40px; float:left; line-height:40px; text-align:center;  position: absolute; left: 2px;}
+	#left{height: 40px; margin: 5px 0 0 25px; background: #32ac71; border-radius: 12px; float: left; padding: 0 6px; max-width: 180px; overflow: hidden;
+		}
+
+	#emojitext2{ height: 40px;  max-width: 180px; float:right; line-height:40px; text-align:center;  position: absolute; right: 2px;}
+	#right{height: 40px; max-width: 180px; margin: 5px 25px 0 0; background: #fcfcfc; border-radius: 12px; float: right; padding: 0 6px;
+			max-width: 180px; overflow: hidden;}
+	
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oTalk=document.getElementById("talk");
+		var oEmoji=document.getElementById("emoji");
+		var oText=document.getElementById("text");
+		var oSent=document.getElementById("sent");
+
+		//表情
+		var oFF=true;
+		oEmoji.onclick=function()
+		{
+			if (oFF) 
+				{
+					oEmoji.src="img/emoji-face_2.png";
+					oFF=false;
+				}
+				else
+				{
+					oEmoji.src="img/emoji-face_1.png";	
+					oFF=true;
+				}
+		}
+		//文字
+		oSent.onclick=function()
+			{
+				if (oFF) 
+				{
+				oTalk.innerHTML='<p id="emojitext">'+'<img src="img/emoji-face_1.png" style="block">'+'<p id="left">'+oText.value+'</p>'+'</p>'+"<br />"+oTalk.innerHTML; //这里的表情<img>要注意直接写标签，不要写地址
+				oText.value="";
+				
+				}
+				else
+				{
+				oTalk.innerHTML='<p id="emojitext2">'+'<img src="img/emoji-face_2.png" style="block">'+'<p id="right">'+oText.value+'</p>'+'</p>'+"<br />"+oTalk.innerHTML;
+				oText.value="";
+				
+				}
+			};
+
+		
+	}
+	</script>
+</head>
+<body>
+	<div class="wrap">
+	<div id="talk"></div>
+	<img id="emoji" src="img/emoji-face_1.png" />
+	<input id="text" type="text" />
+	<input id="sent" type="button" />
+	</div>
+</body>
+</html>

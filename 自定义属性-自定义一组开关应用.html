@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	li{list-style: none; float: left; margin-left: 20px; width: 108px; height: 154px; background: url(img/normal.png);}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aLi=document.getElementsByTagName('li');
+
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].oFF=true;
+
+			aLi[i].onclick=function(){
+				if(this.oFF){
+					this.style.background='url(img/active.png)';
+					this.oFF=false;
+				}else{
+					this.style.background='url(img/normal.png)';
+					this.oFF=true;
+				}
+			
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

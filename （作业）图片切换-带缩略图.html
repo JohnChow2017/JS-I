@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+body,ul{margin: 0; padding: 0; background: black}
+	#wrap{width: 400px; height: 550px; margin: 50px auto; position: relative; }
+	#pic{position: relative;}
+	#pic img{width:400px; height: 350px;}
+	span{ width: 30px; height: 30px; background: black; opacity: 0.5; alpha(opacity=50); display: block; line-height: 30px; text-align: center; 
+			font-weight: bold; position: absolute; top:160px; cursor: pointer; color: #fff}
+	span:hover{opacity: 0.8; alpha(opacity=80); }
+	#l-span{left: 0}
+	#r-span{right: 0}
+	ul{position: relative; left: 50%; margin-left: -50px;}
+	ul li{list-style: none; float: left; margin-right: 20px;  background: gray; width: 10px; height: 10px; border-radius: 50%; cursor: pointer;}
+	#img1{background: url(img/loading.gif) center no-repeat;}
+	.active1 {background: red;}
+	.active2{position: absolute; bottom: 20px; border:3px solid #fff; width: 48px; height: 35px; margin-left: -19px}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oWrap=document.getElementById('wrap');
+		var oPic=document.getElementById('pic');
+		//var oImg=oPic.getElementById('img1');    注意：getElementById是静态方法、getElementsByTagName才是动态方法 静态方法只能使用document
+		var oImg=document.getElementById('img1');
+		var oSpan1=document.getElementById('l-span');
+		var oSpan2=document.getElementById('r-span');
+		var oUl=oWrap.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		var arrPic=['img/pic1.jpg','img/pic2.jpg','img/pic3.jpg','img/pic4.jpg'];
+	  
+		//动态生成li
+		// for(var i=0; i<arrPic.length; i++){
+		// 	oUl.innerHTML+='<li>'+'<div>'+'<img src="" />'+'</div>'+'</li>';
+		// }
+		
+	
+       //缩略图
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+
+			
+			aLi[i].onmouseover=function(){
+				
+				aLi[this.index].innerHTML='<img class="active2" src="'+arrPic[this.index]+'"/>';
+				
+			}
+				
+			aLi[i].onmouseout=function(){
+				
+				aLi[this.index].innerHTML='';
+			}
+
+			aLi[i].onclick=function(){
+
+				for(var j=0; j<aLi.length; j++){
+					aLi[j].className='';
+				}
+				aLi[this.index].className='active1';
+				oImg.src=arrPic[this.index];
+				num = this.index; //这里要注意 是下面li和上面按钮点击后切换图片的索引值相等的关键 ！！！
+			}
+		}
+
+		//初始化
+		num=0
+		oImg.src=arrPic[0];
+		aLi[0].className='active1';
+
+
+		//按钮控制
+		oSpan1.onclick=function(){
+			num--;
+			
+			
+			if(num==-1){
+				num=arrPic.length-1;
+			}
+			oImg.src=arrPic[num];
+				for(var j=0; j<aLi.length; j++){
+					aLi[j].className='';
+					
+				}
+				aLi[num].className='active1';
+
+		}
+		oSpan2.onclick=function(){
+			num++
+			
+			
+			if(num==arrPic.length){
+				num=0;
+			}
+			oImg.src=arrPic[num];
+			
+				for(var j=0; j<aLi.length; j++){
+					aLi[j].className='';
+					
+				}
+				aLi[num].className='active1';
+		}
+
+	}
+</script>
+<body>
+<div id="wrap">
+	<div id="pic">
+		<img id='img1'/>
+		<span id='l-span'> < </span>
+		<span id='r-span'> > </span>
+	</div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</body>
+</html>

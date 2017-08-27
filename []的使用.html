@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div1{width: 100px; height: 100px; border:1px solid #000;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oTxt1=document.getElementById("txt1");
+		var oTxt2=document.getElementById("txt2");
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+
+		oBtn.onclick=function()
+		{
+			//oDiv.style.width=oTxt2.value;          //.后面的值不可以修改
+			  oDiv.style[oTxt1.value]=oTxt2.value;  //[]里的值可以修改
+			  //JS中允许将‘.’替换成‘[]’
+		
+		}
+
+	}
+	</script>
+</head>
+<body>
+	请输入您要设置的样式：<input id="txt1" type="text" /><br />
+	请输入您要设置的数值：<input id="txt2" type="text" /><br />
+	<input id="btn" type="button" value="确认" /><br />
+	<div id="div1"></div>
+
+</body>
+</html>

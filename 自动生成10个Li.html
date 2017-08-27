@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	li{width: 50px; height: 50px; font-size: 30px; color: #000; border:1px solid #000; line-height: 50px; text-align: center; list-style: none;
+		position: absolute; top:70px; left: 0;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function(){
+		var oBtn=document.getElementsByTagName("input")[0];
+		var aColor=['red', 'pink', 'yellow', 'blue'];
+
+		oBtn.onclick=function(){
+			for(i=0; i<10; i++){
+				document.body.innerHTML+="<li>"+i+"</li>";
+
+			}
+		var aLi=document.getElementsByTagName('li');
+			for(i=0; i<aLi.length; i++){
+				aLi[i].style.left=10+60*i+'px';
+				aLi[i].style.background=aColor[i%aColor.length];
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type="button" value="点击生成10个Li" />
+</body>
+</html>

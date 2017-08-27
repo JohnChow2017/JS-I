@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('pic');
+		var oSpan=oDiv.getElementsByTagName('span')[0];
+		var oP=oDiv.getElementsByTagName('p')[0];
+		var oImg=oDiv.getElementsByTagName('img')[0];
+
+		var oUl=oDiv.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+
+
+		var arrUrl=['img/pic1.jpg', 'img/pic2.jpg', 'img/pic3.jpg', 'img/pic4.jpg']; 
+		var arrText=['图片1', '图片2', '图片3', '图片4']; 
+		var num=0;
+		//var oldLi=null;
+
+		for(var i=0; i<arrUrl.length; i++){
+			oUl.innerHTML+='<li>'+'</li>';
+		}
+		//oldLi=aLi[num];
+
+		//初始化
+		oImg.src=arrUrl[num];
+		oSpan.innerHTML=num+1+' / '+arrUrl.length;
+		oP.innerHTML=arrText[num];
+		aLi[num].className='active';
+		
+	
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+			aLi[i].onclick=function(){
+				oImg.src=arrUrl[this.index];
+				oSpan.innerHTML=this.index+1+' / '+arrUrl.length;
+				oP.innerHTML=arrText[this.index];
+
+				// //思路一：全部清空，当前添加
+				for(var i=0; i<aLi.length; i++){
+					aLi[i].className='';
+				}
+				
+				this.className='active';
+
+				//思路二：清空上个，当前添加
+				// oldLi.className='';
+				// oldLi=this;
+				// this.className='active';
+				
+			}
+		}
+
+		
+
+	}
+	</script>
+	<style type="text/css">
+	body{background: #666;}
+	#pic{margin: 90px auto; position: relative; width: 400px; height: 350px; background: url(img/loading.gif) no-repeat center #fff;}
+	#pic img{width: 400px; height: 350px; }
+	ul{position: absolute; top:0; right: -40px; margin: 0; padding: 0}
+	ul li{width: 30px; height: 30px; margin-bottom: 3px; background: #ccc; list-style: none; line-height: 30px; text-align: center;}
+	.active{background: yellow;}
+	#pic span{position: absolute; top:0; left: 0; background: #000; color: #fff; width: 400px; text-align: center;}
+	#pic p{position: absolute; bottom:0; left: 0; background: #000; color: #fff; width: 400px; text-align: center; margin: 0;}
+	</style>
+</head>
+<body>
+	<div id="pic">
+		<span>图片数量加载中...</span>
+		<p>图片加载中...</p>
+		<img src="" />
+		<ul>
+			<!-- <li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li> -->
+		</ul>
+	</div>
+</body>
+</html>

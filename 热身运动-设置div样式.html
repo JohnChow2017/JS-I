@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{background: pink;}
+	h1{display: inline-block;}
+	#btn{width: 100px; height: 50px; background: red; color: #fff; text-align: center; line-height: 50px; display: inline-block;}
+	#div1{width: 100px; height: 100px; border:3px solid #000; background: #fff}
+
+	body,html{height: 100%}
+	#shade{height: 100%; width:100%; background: #000; position: absolute; top:0; left: 0;
+			opacity: 0.5;
+			filter:alpha(opacity=50);
+			display: none;}
+	#t-div{width: 300px; height: 300px; background: #fff; border:1px solid yellow;
+			position: absolute;
+			top:50%; margin-top: -151px;
+			left: 50%; margin-left: -151px;
+			display: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oBtn=document.getElementById("btn");
+		var oShade=document.getElementById("shade");
+		var oTdiv=document.getElementById("t-div");
+		var oDiv1=document.getElementById("div1");
+
+		var oRed=document.getElementById("red");
+		var oYellow=document.getElementById("yellow");
+		var oBlue=document.getElementById("blue");
+
+		var oW1=document.getElementById("w1");
+		var oW2=document.getElementById("w2");
+		var oW3=document.getElementById("w3");
+
+		var oH1=document.getElementById("h1");
+		var oH2=document.getElementById("h2");
+		var oH3=document.getElementById("h3");
+
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+
+		oBtn.onclick=function() //设置
+		{
+			oShade.style.display="block";
+			oTdiv.style.display="block";
+		}
+
+		oBtn1.onclick=function() //确认
+		{
+			oShade.style.display="none";
+			oTdiv.style.display="none";
+		}
+
+		oBtn2.onclick=function() //取消
+		{
+			oShade.style.display="none";
+			oTdiv.style.display="none";
+
+			oDiv1.style.width="100px";
+     		oDiv1.style.height="100px";
+			oDiv1.style.backgroundColor="#fff";
+		}
+
+		//颜色
+		oRed.onclick=function()
+		{
+			oDiv1.style.background="red";
+		}
+		oYellow.onclick=function()
+		{
+			oDiv1.style.background="yellow";
+		}
+		oBlue.onclick=function()
+		{
+			oDiv1.style.background="blue";
+		}
+		//宽度
+		oW1.onclick=function()
+		{
+			oDiv1.style.width="200px";
+		}
+		oW2.onclick=function()
+		{
+			oDiv1.style.width="500px";
+		}
+
+	   oW3.onclick=function()
+		{
+			oDiv1.style.width="700px";
+		}
+			//高度
+		oH1.onclick=function()
+		{
+			oDiv1.style.height="200px";
+		}
+		oH2.onclick=function()
+		{
+			oDiv1.style.height="500px";
+		}
+
+	   oH3.onclick=function()
+		{
+			oDiv1.style.height="700px";
+		}
+
+
+	}
+
+	</script>
+</head>
+<body>
+	<h1>请为下面DIV设置样式：</h1>
+	<div id="btn">点击设置</div>
+	<div id="div1"></div>
+
+	<div id="shade"></div>
+	<div id="t-div">
+		<h2 style="display:inline-block; margin-left:20px;">颜色：</h2>																					<div id="red" style="width:20px; height:20px; background:red; border:1px solid #000; display:inline-block;"></div>
+		<div id="yellow" style="width:20px; height:20px; background:yellow; border:1px solid #000; display:inline-block; margin-left:50px;"></div>
+		<div id="blue" style="width:20px; height:20px; background:blue; border:1px solid #000; display:inline-block;margin-left:50px;"></div>
+	    <h2 style="display:inline-block; margin-left:20px;">宽度：</h2>
+	    <div id="w1" style="width:30px; height:20px; background:#fff; border:1px solid #000; display:inline-block;">200</div>
+		<div id="w2" style="width:30px; height:20px; background:fff; border:1px solid #000; display:inline-block; margin-left:20px;">500</div>
+		<div id="w3" style="width:30px; height:20px; background:fff; border:1px solid #000; display:inline-block;margin-left:20px;">700</div>
+		 <h2 style="display:inline-block; margin-left:20px;">高度：</h2>
+	    <div id="h1" style="width:30px; height:20px; background:#fff; border:1px solid #000; display:inline-block;">200</div>
+		<div id="h2" style="width:30px; height:20px; background:fff; border:1px solid #000; display:inline-block; margin-left:20px;">500</div>
+		<div id="h3" style="width:30px; height:20px; background:fff; border:1px solid #000; display:inline-block;margin-left:20px;">700</div>
+		<br />
+		<input  id="btn1" style="margin-left:80px;" type="button" value="确认" />
+		<input id="btn2" type="button" value="重置" />
+	</div>
+</body>
+</html>

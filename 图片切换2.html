@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#wrap{width: 400px; height: 350px; margin: 50px auto; border:5px solid #ccc; position: relative;}
+	#img1{width: 400px; height: 350px;}
+	#span1{position: absolute; top:0; left: 0; background: #000; text-align: center; height: 30px; width: 400px; line-height: 30px; 
+			filter:alpha(opacity=50); opacity: 0.5; color: #fff;}
+	#left{left: 0;}
+	#right{right: 0;}
+	#span2{position: absolute; bottom:0; left: 0; background: #000; text-align: center; height: 30px; width: 400px; line-height: 30px; 
+			filter:alpha(opacity=50); opacity: 0.5; color: #fff;}
+	a{text-decoration: none; width: 40px; height: 40px; position: absolute; top:155px; background: #000; filter:alpha(opacity=50); opacity: 0.5; color: #fff; text-align: center; line-height: 40px; font-size: 20px;}
+	a:hover{background:#000; filter:alpha(opacity=90); opacity: 0.9 ;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oImg1=document.getElementById("img1");
+		var oSpan1=document.getElementById("span1");
+		var oLeft=document.getElementById("left");
+		var oRight=document.getElementById("right");
+		var oSpan2=document.getElementById("span2");
+
+		var img=['img/pic1.jpg', 'img/pic2.jpg', 'img/pic3.jpg', 'img/pic4.jpg'];
+		var name=['cat1', 'cat2', 'dog1', 'dog2'];
+
+		//初始化
+		var num=0;
+
+		function run()
+		{
+			oSpan1.innerHTML=num+1 +'/'+ img.length;
+			oImg1.src=img[num];
+			oSpan2.innerHTML=name[num];
+		}
+		run()
+
+		oLeft.onclick=function()
+		{
+			num--;
+			if(num==-1)
+			{
+				num=img.length-1;
+				
+			}run()
+		}
+
+		oRight.onclick=function()
+		{
+			num++;
+			if(num==img.length)
+			{
+				num=0;
+				
+			}
+			run()
+			
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<img id="img1" />
+		<span id="span1">图片数量计算中...</span>
+		<a id="left" href="#"> < </a>
+		<a id="right" href="#"> > </a>
+		<span id="span2" >图片加载中...</span>
+
+	</div>
+</body>
+</html>

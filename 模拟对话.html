@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div1{width: 300px; height: 400px; border:1px solid #000; background: #ccc}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oDiv=document.getElementById("div1");
+		var oTxt=document.getElementById("txt1");
+		var oBtn=document.getElementById("btn1");
+		var oSpan=document.getElementById("span1");
+
+		oBtn.onclick=function()
+		{
+			if(oTxt.value==""){
+				alert("内容不能为空");
+			}
+			else{
+				oDiv.innerHTML+=oSpan.innerHTML+oTxt.value+"<br />";
+				oTxt.value="";
+			}
+		
+		}
+		
+	}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<span id="span1">周杰伦：</span><input id="txt1" type="text" />
+	<input id="btn1" type="button" value="确认" />
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	ul, h2{padding: 0; margin: 0}
+	ul{list-style: none; }
+	#lis{width: 240px; margin: 60px auto}
+	.list ul{text-indent: 10px; display: none;}
+	h2{border:1px solid #000; background: pink url(img/ico1.gif) left center no-repeat; text-indent:10px;}
+	.list li{border-bottom: 1px solid #000; background: yellow}
+	.active{background: blue url(img/ico2.gif) left center no-repeat; }
+	#lis ul .hover{background: red;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('lis');
+		var aH2=oUl.getElementsByTagName('h2');
+		var aUl=oUl.getElementsByTagName('ul');
+		var aLi=null;
+		var arr=[];
+
+		for(var i=0; i<aH2.length; i++){
+			aH2[i].index=i;
+
+			aH2[i].onclick=function(){
+				if(this.className=='active'){
+					this.className='';
+					aUl[this.index].style.display='none';
+				}
+				else{
+					this.className='active';
+					aUl[this.index].style.display='block';
+				}
+				
+			}
+		}
+
+		for(var i=0; i<aUl.length; i++){
+			aLi=aUl[i].getElementsByTagName('li');
+			
+			for(var j=0; j<aLi.length; j++){
+				arr.push(aLi[j]);	
+			}
+		}
+		for(var i=0; i<arr.length; i++){
+			arr[i].onclick=function(){
+				
+				for(var i=0; i<arr.length; i++){
+					arr[i].className='';
+				}
+				this.className='hover';
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<ul id="lis">
+		<li class="list">
+			<h2>我的好友</h2>
+			<ul>
+				<li>周杰伦</li>
+				<li>张惠妹</li>
+				<li>陈奕迅</li>
+			</ul>
+		</li>
+		<li class="list">
+			<h2>我的同学</h2>
+			<ul>
+				<li>赵薇</li>
+				<li>黄晓明</li>
+				<li>陈坤</li>
+			</ul>
+		</li>	
+		<li class="list">
+			<h2>黑名单</h2>
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

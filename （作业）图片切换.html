@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	input{float: left}
+	div{float: left; margin-right: 20px; margin-top: 50px; position: relative;}
+	img{width: 400px; height: 350px; border:0; }
+	span{width: 400px; background: #000; font-size: 15px; line-height: 15px; color: #fff; text-align: center; bottom: 0; left: 0; 
+		display: block; position: absolute;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aInput=document.getElementsByTagName('input');
+		var aDiv=document.getElementsByTagName('div');
+		var aImg=document.getElementsByTagName('img');
+		var aSpan=document.getElementsByTagName('span');
+		var arr1=['img/pic1.jpg','img/pic2.jpg','img/pic5.jpg','img/pic6.jpg'];
+		var arr2=['img/pic3.jpg','img/pic4.jpg','img/pic7.jpg','img/pic8.jpg'];
+		var pic1=['灰猫','花猫','布偶猫','英国短毛猫'];
+		var pic2=['柯基','秋田犬','哈士奇','德国牧羊犬'];
+	
+		//初始化
+		var num1=0;
+		var num2=0;
+		aImg[0].src=arr1[num1];
+		aImg[1].src=arr2[num2];
+		aSpan[0].innerHTML=pic1[num1];
+		aSpan[1].innerHTML=pic2[num2];
+
+		function fn(){
+			aImg[0].src=arr1[num1];
+			aImg[1].src=arr2[num2];
+			aSpan[0].innerHTML=pic1[num1];
+			aSpan[1].innerHTML=pic2[num2];
+
+		}
+
+		aInput[1].onclick=function(){ //下一组
+			num1++;
+			num2++;
+			if(num1==arr1.length){
+				num1=0;
+			}
+			if(num2==arr2.length){
+				num2=0;
+			}
+			fn();
+			
+
+			aImg[0].onclick=function(){
+				num1++;
+
+				if(num1==arr1.length){
+					num1=0;
+				}	
+				aImg[0].src=arr1[num1];
+				aSpan[0].innerHTML=pic1[num1];
+			
+			}
+			aImg[1].onclick=function(){
+				num2++;
+
+				if(num2==arr2.length){
+					num2=0;
+				}	
+				aImg[1].src=arr2[num2];
+				aSpan[1].innerHTML=pic2[num2];
+			
+			}
+
+		}
+
+		aInput[0].onclick=function(){
+			num1--;
+			num2--;
+
+			if(num1==-1){
+				num1=arr1.length-1;
+			}
+			if(num2==-1){
+				num2=arr2.length-1;
+			}
+			fn();
+		}
+		
+	}
+	</script>
+</head>
+<body>
+	<input type="button" value="上一组" />
+	<input type="button" value="下一组" />
+	<div>
+	<img src="" /><span></span>
+	</div>
+
+	<div>
+	<img src="" /><span></span>
+	</div>
+</body>
+</html>

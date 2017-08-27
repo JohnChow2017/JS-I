@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aBtn=document.getElementsByTagName('input');
+		var arr=['A','B','C','D'];
+
+		for(var i=0; i<aBtn.length; i++){
+			aBtn[i].num=0;
+			aBtn[i].onclick=function(){
+				//this.num=0;
+				//aBtn[i].value=arr[this.num];
+				this.value=arr[this.num]; //注意this的用法，不能用aBtn[i];
+				this.num++;
+				if(this.num==arr.length){
+					this.num=0;
+				}
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type="button" value="0" />
+	<input type="button" value="0" />
+	<input type="button" value="0" />
+</body>
+</html>

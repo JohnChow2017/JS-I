@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	li{width:50px; height: 50px; position: absolute; top:60; left: 0; border:1px solid #000; text-align: center; line-height: 50px; list-style: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oBtn=document.getElementsByTagName('input')[0];
+		var aLi=document.getElementsByTagName('li');
+		var aColor=['red','blue','yellow','pink'];
+
+		var str='';
+		oBtn.onclick=function(){
+			for(var i=0; i<100; i++){
+				str+="<li>"+i+"</li>";
+			}
+			document.body.innerHTML=str;
+
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].style.left=10+60*(i%10)+'px';
+				aLi[i].style.top=50+60*parseInt(i/10)+'px';
+				aLi[i].style.background=aColor[i%aColor.length];
+			}
+		}
+	}
+	
+	</script>
+</head>
+<body>
+	<input type="button" value="点击自动生成100个li" />
+</body>
+</html>

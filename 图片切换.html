@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oPic1=document.getElementById("pic1");
+
+		var onOff=true;    //创造一个开关
+		oPic1.onclick=function()
+		{
+			if(onOff)
+			{
+				oPic1.src="img/pic2.jpg";
+				onOff=false;
+			}
+			else
+			{
+				oPic1.src="img/pic1.jpg";
+				onOff=true;
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<img id="pic1" src="img/pic1.jpg" style="width:200px;" />
+
+</body>
+</html>
