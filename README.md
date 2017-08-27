@@ -1,8 +1,8 @@
 # miaov-JS初级
 ## Demo
 热身运动-设置div样式 <br>
-[代码](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%83%AD%E8%BA%AB%E8%BF%90%E5%8A%A8-%E8%AE%BE%E7%BD%AEdiv%E6%A0%B7%E5%BC%8F.html)<br>
-在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/热身运动-设置div样式.html<br>
+
+在线预览地址[代码](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%83%AD%E8%BA%AB%E8%BF%90%E5%8A%A8-%E8%AE%BE%E7%BD%AEdiv%E6%A0%B7%E5%BC%8F.html)：https://johnchow2017.github.io/Demo/miaov-JS初级/热身运动-设置div样式.html<br>
 
 1.图片切换<br>
 代码：<br>
@@ -43,6 +43,42 @@
 10.模拟对话<br>
 代码：<br>
 在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/模拟对话.html<br>
+
+11.通关口令<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/通关口令.html<br>
+
+12.自定义属性-建立索引值<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自定义属性-建立索引值.html<br>
+
+13.自定义属性应用-按钮的value变化<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自定义属性应用-按钮的value变化.html<br>
+
+14.自定义属性应用-仿qq<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自定义属性应用-仿qq.html<br>
+
+15.自定义属性-自定义一组开关应用<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自定义属性-自定义一组开关应用.html<br>
+
+16.自动生成10个Li<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自动生成10个Li.html<br>
+
+17.自动生成100个Li<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自动生成100个Li.html<br>
+
+18.自动生成V字形（提高版）未完成<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自动生成V字形（提高版）未完成.html<br>
+
+19.自动生成V字形<br>
+代码：<br>
+在线预览地址：https://johnchow2017.github.io/Demo/miaov-JS初级/自动生成V字形.html<br>
 
 
 ## NOTES
