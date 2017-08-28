@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		var arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+		var aBtn=document.getElementsByTagName('input');
+		var oP=document.getElementsByTagName('p')[1];
+		
+		//判断数字
+		aBtn[0].onclick=function(){
+			oP.innerHTML='';
+			var arrNum=[]; 						//新建数组用于存放数字
+			for(var i=0; i<arr.length; i++){
+				if(typeof(arr[i])==='number' && !isNaN(arr[i])){
+					arrNum.push(arr[i]); 		//符合条件的加到新数组里
+				}
+			}
+			for(var i=0; i<arrNum.length; i++){	
+					oP.innerHTML+=arrNum[i]+',';
+			}
+		}
+		aBtn[1].onclick=function(){
+			oP.innerHTML='';
+			var arrNum2=[];
+			for(var i=0; i<arr.length; i++){
+				if(parseFloat(arr[i]) || parseFloat(arr[i])==0){
+					arrNum2.push(arr[i]);
+				}
+			}
+			for(var i=0; i<arrNum2.length; i++){
+				oP.innerHTML+=arrNum2[i]+',';
+			}
+			
+		}
+		//判断最大值
+		aBtn[2].onclick=function(){
+			oP.innerHTML='';
+			var arrNum2=[];
+			for(var i=0; i<arr.length; i++){
+				if(parseFloat(arr[i]) || parseFloat(arr[i])==0){
+					arrNum2.push(arr[i]);
+				}
+			}
+			max=parseFloat(arrNum2[0]);     //注意慈航代码初始化所放的位置，如果放在下面的for循环里就废了
+			for(var j=0; j<arrNum2.length; j++){
+				
+				if( max < parseFloat(arrNum2[j]) ){
+					max = parseFloat(arrNum2[j]);
+				}
+			}
+				oP.innerHTML=max;
+			}
+		
+
+		//找出NaN所在位置
+		aBtn[3].onclick=function(){
+			oP.innerHTML='';
+			var arrNum3=[];
+			for(var i=0; i<arr.length; i++){
+				if(typeof(arr[i])==='number' && isNaN(arr[i]) ){
+					arrNum3.push(i);
+				}
+			}
+				for(var i=0; i<arrNum3.length; i++){
+					oP.innerHTML+=arrNum3[i]+',';
+				}
+		}
+	}
+
+</script>
+<body>
+	<p>arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];</p>
+	<ol>
+		<li>找到arr里所有的数字：-98765, 34, -2, 0, 5</li>
+		<li>找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元', 5</li>
+		<li>把转成数字以后，最大值判断出来：300</li>
+		<li>把 NaN 所在的位置找出来：1 14 17 19</li>
+	</ol>
+	<input type="button" value="找到arr里所有的数字" />
+	<input type="button" value="找到可以转成数字的" />
+	<input type="button" value="把转成数字以后，最大值判断出来" />
+	<input type="button" value="把 NaN 所在的位置找出来" />
+	<p></p>
+</body>
+</html>
