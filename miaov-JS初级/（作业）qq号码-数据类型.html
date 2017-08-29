@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	em{color: red;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oInput=document.getElementsByTagName('input')[0];
+		var oBtn=document.getElementsByTagName('input')[1];
+		var oEm=document.getElementsByTagName('em')[0];
+
+		oBtn.onclick=function(){
+			if(oInput.value===''){
+				oEm.innerHTML='1、没有输入';
+			}
+			else if (isNaN(oInput.value)){ //注意没有!=== 这一操作符...
+				oEm.innerHTML='2、输入的不是数字';
+			}
+			else if((oInput.value).charAt(0)==0){
+				oEm.innerHTML='3、不能有0在前面';
+			}
+			else if(parseFloat(oInput.value)!==parseInt(oInput.value)){
+				oEm.innerHTML='4、不能是小数';
+			}
+			else if((oInput.value).length<5 || (oInput.value).length>10){
+				oEm.innerHTML='5、输入的数字必须在5位以上、10位以内';
+			}
+			else{
+				oEm.innerHTML='有效号码';
+;			}
+			
+			
+		}
+	}
+	</script>
+</head>
+<body>
+	<p>请输入QQ号码：<input type="text" />  <input type="button" value="判断" /><em></em></p>
+	<p>1、有没有输入</p>
+	<p>2、输入的是不是数字</p>
+	<p>3、不能有0在前面</p>
+	<p>4、不能是小数</p>
+	<p>5、输入的数字必须在5位以上、10位以内</p>
+</body>
+</html>
