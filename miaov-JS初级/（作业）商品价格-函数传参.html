@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('list');
+		var aLi=oUl.getElementsByTagName('li');
+		
+
+		  // 重用代码：
+    //         1、尽量保证 HTML 代码结构一致，可以通过父级选取子元素；
+    //         2、把核心主程序实现，用函数包起来；
+    //         3、把每组里不同的值找出来，通过传参实现；
+
+		for(var i=0; i<aLi.length; i++){
+			// li=aLi[i];
+			fn(aLi[i]);
+		}
+		
+
+		function fn(aLi){
+			var aBtn=aLi.getElementsByTagName('input');
+			var oB=aLi.getElementsByTagName('b')[0];
+			var oStrong=aLi.getElementsByTagName('strong')[0];
+			var oSpan=aLi.getElementsByTagName('span')[0];
+
+			var num=Number(oB.innerHTML);
+			aBtn[0].onclick=function(){
+				num--;
+				if(num<0){
+					num=0;
+				}
+				oB.innerHTML=num;
+				oSpan.innerHTML=num*parseFloat(oStrong.innerHTML);
+			}
+			aBtn[1].onclick=function(){
+				num++;
+				
+				oB.innerHTML=num;
+				oSpan.innerHTML=num*parseFloat(oStrong.innerHTML);
+			}
+		}
+
+		
+		
+	}
+	</script>
+</head>
+<body>
+	<ul id="list">
+		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>12.5</strong>元 小计:<span>0</span>元</li>
+		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>10.5</strong>元 小计:<span>0</span>元</li>
+		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>8.5</strong>元 小计:<span>0</span>元</li>
+		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>8</strong>元 小计:<span>0</span>元</li>
+		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>14.5</strong>元 小计:<span>0</span>元</li>
+	</ul>
+	<p>商品合计共：<span>0</span>件，共花费了：<span>0</span>元<br>
+	其中最贵的商品单价是：<span>0</span>元</p>
+</body>
+</html>
