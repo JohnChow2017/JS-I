@@ -66,7 +66,7 @@
 21.（作业）qq号码-数据类型
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）qq号码-数据类型.html) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89qq%E5%8F%B7%E7%A0%81-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html)<br>
 
-22.（作业）商品价格-函数传参~
+22.（作业）商品价格-函数传参
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）商品价格-函数传参.html) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
 
 
