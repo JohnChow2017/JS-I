@@ -4,48 +4,80 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script type="text/javascript">
-	window.onload=function(){
-		var oUl=document.getElementById('list');
-		var aLi=oUl.getElementsByTagName('li');
-		
-
-		  // 重用代码：
+    // 重用代码：
     //         1、尽量保证 HTML 代码结构一致，可以通过父级选取子元素；
     //         2、把核心主程序实现，用函数包起来；
     //         3、把每组里不同的值找出来，通过传参实现；
+    window.onload=function(){
+    	var oUl=document.getElementById('list');
+    	var aLi=oUl.getElementsByTagName('li');
+    	var oP=document.getElementById('line');
+    
 
-		for(var i=0; i<aLi.length; i++){
-			// li=aLi[i];
-			fn(aLi[i]);
-		}
-		
+   for(var i=0; i<aLi.length; i++){
+       	fn(aLi[i]);
+   }
+    function fn(li){
+    	var oBtn=li.getElementsByTagName('input');
+    	var oB=li.getElementsByTagName('b')[0];
+    	var oStrong=li.getElementsByTagName('strong')[0];
+    	var oSpan=li.getElementsByTagName('span')[0];
+    	var n=oB.innerHTML;
+    	var price=parseFloat(oStrong.innerHTML);
 
-		function fn(aLi){
-			var aBtn=aLi.getElementsByTagName('input');
-			var oB=aLi.getElementsByTagName('b')[0];
-			var oStrong=aLi.getElementsByTagName('strong')[0];
-			var oSpan=aLi.getElementsByTagName('span')[0];
 
-			var num=Number(oB.innerHTML);
-			aBtn[0].onclick=function(){
-				num--;
-				if(num<0){
-					num=0;
-				}
-				oB.innerHTML=num;
-				oSpan.innerHTML=num*parseFloat(oStrong.innerHTML);
-			}
-			aBtn[1].onclick=function(){
-				num++;
-				
-				oB.innerHTML=num;
-				oSpan.innerHTML=num*parseFloat(oStrong.innerHTML);
-			}
-		}
+    	oBtn[0].onclick=function(){
+    		
+    		n--;
+    		if(n<0){
+    			n=0;
+    		}
+    		oB.innerHTML=n;
+    		oSpan.innerHTML=n*parseFloat(oStrong.innerHTML);
+    		fnp();
 
-		
-		
-	}
+    	}
+    	oBtn[1].onclick=function(){
+    		
+    		n++;
+    		oB.innerHTML=n;
+    		oSpan.innerHTML=n*parseFloat(oStrong.innerHTML);
+    		fnp();
+    	}
+    }
+    function fnp(){
+    	var num=0; //总件数
+    	var lib=oUl.getElementsByTagName('b');
+    	var numP=0;//总价格
+    	var lispan=oUl.getElementsByTagName('span');
+
+    	var numMax=0;//最贵
+    	var paSpan=oP.getElementsByTagName('span');
+
+    	paSpan[0].innerHTML=num;
+    	paSpan[1].innerHTML=numP;
+
+    	var nummax=[];
+
+    	for(var i=0; i<aLi.length; i++){
+    		num+=parseInt(lib[i].innerHTML);
+    		numP+=parseFloat(lispan[i].innerHTML);
+
+    		if(Number(lib[i].innerHTML)){
+    			nummax[nummax.length]=parseFloat(oUl.getElementsByTagName('strong')[i].innerHTML);
+    		}
+    		
+    	}
+    	nummax.sort(function(a,b){return(b-a)});
+    	nummax[0]=nummax[0]?nummax[0]:0;
+
+    	paSpan[0].innerHTML=num;
+    	paSpan[1].innerHTML=numP;
+    	paSpan[2].innerHTML=nummax[0];
+    	
+    }
+    }
+
 	</script>
 </head>
 <body>
@@ -56,7 +88,7 @@
 		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>8</strong>元 小计:<span>0</span>元</li>
 		<li><input type="button" value="-"><b>0</b><input type="button" value="+"> 单价：<strong>14.5</strong>元 小计:<span>0</span>元</li>
 	</ul>
-	<p>商品合计共：<span>0</span>件，共花费了：<span>0</span>元<br>
+	<p id="line">商品合计共：<span>0</span>件，共花费了：<span>0</span>元<br>
 	其中最贵的商品单价是：<span>0</span>元</p>
 </body>
 </html>
