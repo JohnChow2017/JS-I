@@ -69,6 +69,9 @@
 22.（作业）商品价格-函数传参
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）商品价格-函数传参.html) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
 
+23.（作业）修改文本框的值-函数传参
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）修改文本框的值-函数传参) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%80%BC-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
+
 
 ## NOTES
 ####
