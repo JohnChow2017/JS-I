@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改文本框的值</title>
+	<style type="text/css">
+	 #wrap{margin: 30px auto; width:600px;}
+	 h2{margin: 0; padding: 0;line-height: 30px; font-size: 16px; font-weight: bold; color: #fff; text-indent: 20px; background: #6BA542}
+	 ul{margin: 0; padding: 0; list-style: none;}
+	 li{border-bottom: 1px solid #eee; line-height: 40px;}
+	 p{ line-height: 40px; font-size: 16px; color: gray; text-indent: 20px; margin: 0; display: inline-block; padding-right: 5px}
+	 img{width: 16px; height: 16px; cursor: pointer;}
+	 input{display: none; }
+	 span{cursor: pointer; color: gray; display: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		
+
+		for(var i=0; i<aLi.length; i++){	
+
+			fn(aLi[i]);
+
+		}
+
+		function fn(li){
+
+			var oP=li.getElementsByTagName('p')[0];
+			var oImg=li.getElementsByTagName('img')[0];
+			var oInput=li.getElementsByTagName('input')[0];
+			var oSpan1=li.getElementsByTagName('span')[0];
+			var oSpan2=li.getElementsByTagName('span')[1];
+
+			//初始化
+			oInput.value=oP.innerHTML;
+
+			oImg.onclick=function(){
+			oP.style.display='none';
+			this.style.display='none';
+			oInput.style.display='inline-block';
+			oSpan1.style.display='inline-block';
+			oSpan2.style.display='inline-block';
+
+			oSpan1.onclick=function(){
+				oP.innerHTML=oInput.value;
+				oP.style.display='inline-block';
+				oInput.style.display='none';
+				oSpan1.style.display='none';
+				oSpan2.style.display='none';
+				oImg.style.display='inline-block';
+			}
+			oSpan2.onclick=function(){
+				oP.style.display='inline-block';
+				oInput.style.display='none';
+				oSpan1.style.display='none';
+				oSpan2.style.display='none';
+				oImg.style.display='inline-block';
+			}
+		}
+		}
+
+		
+		
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<h2>分类名称</h2>
+		<ul>
+			<li>
+			<p>下雪到底打不打伞</p>
+			<img src="img/pen.png" />
+			<input type="text" value="" />
+			<span>确认</span>
+			<span>取消</span>
+			</li>
+
+			<li>
+			<p>南方冬天到底冷不冷</p>
+			<img src="img/pen.png" />
+			<input type="text" value="" />
+			<span>确认</span>
+			<span>取消</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
