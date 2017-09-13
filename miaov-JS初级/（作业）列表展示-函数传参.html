@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	div, h2, ul, li{padding: 0; margin:0;}
+	#wrap{background: #DEE7E7; width: 300px;}
+	li{list-style: none;}
+	img{height: 70px;}
+	h2{line-height: 60px; font-size: 20px; text-indent: 20px;  padding-right: 5px; width: 150px; float: left; border-bottom: 1px solid #000}
+	#list{ float: right; width: 145px; border-bottom: 1px solid #000}
+	#list li{float: left; line-height: 20px; font-size: 15px; margin-top: 39px; border-left: 1px solid #000; border-top: 1px solid #000; 
+			padding: 0 5px; cursor: pointer;}
+	#list li:last-child{border-right: 1px solid #000}
+
+    #tablelist{clear: left;}
+    #tablelist li{border-bottom: 1px dashed #fff; padding-left: 10px;}
+    #tablelist  .ll{display: inline-block; }
+	#omei, #neidi, #gangtai{ display: none;}
+	
+	.listdiv{height: 70px; background: #fff; display: none;}
+	.listdiv img{border:1px dashed #fff; float: left;}
+	.listdiv p{line-height: 70px; font-size: 18px; float: left;}
+
+	.active{background: #fff !important;}
+	.show{display: block !important;}
+	
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oWrap=document.getElementById('wrap'),
+		    oUl=document.getElementById('list'),
+		    aLi=oUl.getElementsByTagName('li'),
+
+		    oTablelist=document.getElementById('tablelist'),
+		    aUl=oTablelist.getElementsByTagName('ul'),
+
+		    oOmei=document.getElementById('omei'),
+		    oNeidi=document.getElementById('neidi'),
+		    oGangtai=document.getElementById('gangtai');
+
+		    for(var i=0; i<aLi.length; i++){
+		    	aLi[i].index=i;
+		    	aLi[i].onclick=function(){
+		    		num=this.index;
+		    		fnTab(num);
+		    	}
+		    }
+		    function fnTab(num){
+		    	 for(var i=0; i<aLi.length; i++){
+			    	aLi[i].className='';
+			    	aUl[i].className='';
+		    	}
+		    		aLi[num].className='active';
+			    	aUl[num].className='show';
+		    }
+
+		    for(var i=0; i<aUl.length; i++){
+		    	hover(aUl[i]);
+		    }
+		    function hover(ul){
+		    	var aLii=ul.getElementsByTagName('li');
+		    	for(var i=0; i<aLii.length; i++){
+		    		aLii[i].onmouseover=function(){
+		    			this.getElementsByTagName('p')[0].style.display='none';
+		    			this.getElementsByTagName('div')[0].style.display='block';
+		    		}
+		    		aLii[i].onmouseout=function(){
+		    			this.getElementsByTagName('p')[0].style.display='block';
+		    			this.getElementsByTagName('div')[0].style.display='none';
+		    		}
+		    	}
+		    }
+		   
+
+
+	}
+</script>
+<body>
+	<div id="wrap">
+		<h2>风云音乐榜</h2>
+		<ul id="list">
+			<li class="active">欧美</li>
+			<li>内地</li>
+			<li>港台</li>
+		</ul>
+		<div id="tablelist">
+			<ul id="omei" class="show">
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">aaaaaaaa</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAA</p>
+				</div>
+				</li>
+			</ul>
+			<ul id="neidi">
+				<li>
+				<p class="ll">bbbbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">bbbbbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">bbbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">bbbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">bbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">bbbbbbbb</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAA</p>
+				</div>
+				</li>
+			</ul>
+			<ul id="gangtai">
+				<li>
+				<p class="ll">cccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">cccccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">ccccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">ccccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">cccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAAAA</p>
+				</div>
+				</li>
+				<li>
+				<p class="ll">ccccccc</p>
+				<div class="listdiv">
+					<img src="img/pen.png" />
+					<p>AAAAAAAAAAA</p>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
