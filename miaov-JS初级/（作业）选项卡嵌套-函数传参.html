@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.wrap{width: 500px; 
+		
+		background: gray;
+	}
+
+	ul{margin: 0; 
+		padding: 0;
+	}
+
+	ul, li{list-style: none;}
+
+	#tab{float: left;}
+
+	#tab li{height: 120px; 
+		width: 90px; 
+		background: yellow; 
+		border:1px solid #000; 
+		border-bottom:none; 
+		text-align: center; 
+		font-size: 20px; 
+		line-height: 120px; 
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	#pic{width:408px;
+		height: 363px;
+		float: right;
+		position: relative;
+	}
+
+	#pic img{width: 408px;
+			height: 363px;
+			display: none;
+	}
+	
+	#pic ul{position: absolute;
+			bottom: 0;
+			height: 20px;	
+			background: green;
+			display: none;
+		}
+
+	#pic li{float: left;
+				line-height: 20px;
+				cursor: pointer;
+				font-size: 18px;
+				text-align: center;
+				padding: 0 20px;
+				border:1px solid #000;
+			}
+	#pic li.activeli{background: pink;}
+	#pic ul.active{display: block;}		
+ 	
+ 	#tab .show{background: red;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload=function(){
+		var arr=[
+			['img/pic1.jpg','img/pic4.jpg'],
+			['img/pic2.jpg','img/pic5.jpg'],
+			['img/pic3.jpg','img/pic6.jpg']
+		];
+		var oTab=document.getElementById('tab');
+		var aLi=oTab.getElementsByTagName('li');
+		var oPic=document.getElementById('pic');
+		var aUl=oPic.getElementsByTagName('ul');
+		var aImg=oPic.getElementsByTagName('img');
+
+		var num=0;
+		var aLitab=aUl[0].getElementsByTagName('li');
+
+		fn(aUl[0]);
+
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+			aLi[i].onclick=function(){
+				for(var i=0; i<aLi.length; i++){
+					num=this.index;
+					aLi[i].className='';
+					aUl[i].className='';
+					aImg[i].style.display='none';
+				}
+				this.className='show';
+				aUl[num].className='active';
+				aImg[num].style.display='block';
+
+				fn(aUl[num]);
+			}
+		}
+
+		function fn(alitab){
+			var lis=alitab.getElementsByTagName('li');
+			for(var i=0; i<lis.length; i++){
+				if(lis[i].className){
+					aImg[i].src=arr[num][i];
+				}
+				lis[i].index=i;
+				lis[i].onclick=function(){
+					for(var i=0; i<lis.length; i++){
+						lis[i].className='';
+					}
+					this.className='activeli';
+					aImg[num].src=arr[num][this.index];
+				}
+			}
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul id="tab">
+			<li class="show">第一组</li>
+			<li>第二组</li>
+			<li>第三组</li>
+		</ul>
+		<div id="pic">
+			<img src="img/pic1.jpg" style="display:block" />
+			<ul class="active"> 
+				<li class="activeli">第1页</li>
+				<li>第2页</li>
+			</ul>
+
+			<img src="img/pic2.jpg" />
+			<ul> 
+				<li class="activeli">第一页</li>
+				<li>第二页</li>
+			</ul>
+
+			<img src="img/pic3.jpg" />
+			<ul> 
+				<li class="activeli">一</li>
+				<li>二</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
