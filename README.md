@@ -76,7 +76,7 @@
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）列表展示-函数传参) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
 
 25.（作业）选项卡嵌套-函数传参
-[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）选项卡嵌套-函数传参 [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E9%80%89%E9%A1%B9%E5%8D%A1%E5%B5%8C%E5%A5%97-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/（作业）选项卡嵌套-函数传参) [【代码】](https://github.com/JohnChow2017/miaov-JS/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89%E9%80%89%E9%A1%B9%E5%8D%A1%E5%B5%8C%E5%A5%97-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82.html)<br>
 
 
 ## NOTES
