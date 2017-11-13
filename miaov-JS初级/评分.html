@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评分</title>
+	<style type="text/css">
+	li{width: 30px; height: 30px; 
+		list-style: none; float: left; margin-right: 2px; display: block}
+	p{width: 300px; height: 30px; display: inline-block;
+		padding: 0; margin: 0 8px; color: red; font-weight: bold; line-height: 30px; font-size: 14px;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aLi=document.getElementsByTagName('li');
+		var oP=document.getElementsByTagName('p')[0];
+		var iNow=-1;
+		var arr=['img/star-y.png', 'img/star-g.png'];
+		var arrstr=['垃圾 !','一般 !','不错 !','很棒 !','太牛B了 !'];
+
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+
+			aLi[i].onmouseover=function(){
+				clear();
+				for(var i=0; i<=this.index; i++){
+					aLi[i].getElementsByTagName('img')[0].src=arr[0];
+					oP.innerHTML=arrstr[i]
+				}
+			}
+			aLi[i].onmouseout=function(){
+				clear();
+				for(var i=0; i<=iNow; i++){
+					aLi[i].getElementsByTagName('img')[0].src=arr[0];
+					oP.innerHTML=arrstr[i]
+				}
+			}
+			aLi[i].onclick=function(){
+				iNow=this.index;
+			}
+		}
+
+		function clear(){
+			for(var i=0; i<aLi.length; i++){
+					aLi[i].getElementsByTagName('img')[0].src=arr[1];
+					oP.innerHTML='';
+				}
+		}
+	}
+	</script>
+</head>
+<body>
+	<ul>
+		<li><img src="img/star-g.png" /></li>
+		<li><img src="img/star-g.png" /></li>
+		<li><img src="img/star-g.png" /></li>
+		<li><img src="img/star-g.png" /></li>
+		<li><img src="img/star-g.png" /></li>
+	</ul>
+	<p></p>
+</body>
+</html>
