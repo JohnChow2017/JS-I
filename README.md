@@ -84,6 +84,9 @@
 26.（作业）流程控制-评分
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/评分) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E8%AF%84%E5%88%86.html)<br>
 
+27.（作业）全选-有bug版
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/全选（含bug版本）) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%85%A8%E9%80%89%EF%BC%88%E5%90%ABbug%E7%89%88%E6%9C%AC%EF%BC%89.html)<br>
+
 
 ## NOTES
 ####
