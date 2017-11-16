@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#wrap{width: 334px; height: 232px; margin: 30px auto; border: 1px solid #e0e0e0;}
+	ul{margin: 0; padding: 0;}
+	span{font-size:15px; color: #0000cc;}
+	li{list-style: none; border-bottom: 1px solid #f3f3f3; line-height: 32px; 
+		margin-left: 24px;}
+	li:last-child{border:none;}
+	input{margin: 0;}
+	
+	.number, #check{color: #666695; padding-left: 18px; display: inline-block;}
+	.music{margin-left: 30px; display: inline-block; width: 110px;}
+	.singer{margin-left: 40px; display: inline-block; width: 48px;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oWrap=document.getElementById('wrap');
+		var aLi=oWrap.getElementsByTagName('li');
+		var aInput=oWrap.getElementsByTagName('input');
+		
+		var arrcolor=['#f7ffff', '']
+		var num;	
+
+		for(var i=1; i<aLi.length; i++){
+			aLi[i].index=i;
+			
+		//隔行换色
+			
+				aLi[i].style.background=arrcolor[i % arrcolor.length];
+			
+		//鼠标滑过变色
+			aLi[i].onmouseover=function(){
+				this.style.background='#eee';
+			}
+			aLi[i].onmouseout=function(){
+				this.style.background=arrcolor[this.index % arrcolor.length];
+			}	
+		}
+		//点击变色
+		for(var i=1; i<aInput.length; i++){
+			aInput[i].index=i;
+			
+			aInput[i].onclick=function(){
+				num=this.index;
+				if(this.checked){
+					// aLi[num].style.background='#eee';
+
+					aLi[num].onmouseout=function(){
+						this.style.background='#eee';
+					}
+				}
+				else{
+					aLi[num].style.background=arrcolor[this.index % arrcolor.length];
+
+					aLi[num].onmouseout=function(){
+						this.style.background=arrcolor[this.index % arrcolor.length];
+					}
+				}
+			}
+		}
+			//全选按钮
+			aInput[0].onclick=function(){
+				
+					if(!this.checked){
+						for(var i=0; i<aInput.length; i++){
+							aInput[i].index=i;
+							aInput[i].checked=false;
+							aLi[i].style.background=arrcolor[this.index % arrcolor.length];
+
+							aLi[i].onmouseout=function(){
+						this.style.background=arrcolor[this.index % arrcolor.length];
+					}
+						}
+					}
+					else{
+						for(var i=0; i<aInput.length; i++){
+							aInput[i].checked=true;
+							aLi[i].style.background='#eee';
+
+							aLi[i].onmouseout=function(){
+							this.style.background='#eee';
+					}
+						}					
+					}
+			}
+	}
+	</script>
+</head>
+<body>
+	<ul id="wrap">
+		<li>
+		<input type="checkbox" />
+		<span id='check'>全选</span>
+		</li>
+
+		<li>
+		<input type="checkbox" />
+		<span class='number'>1</span>
+		<span class='music'>你还要我怎样</span>
+		<span class='singer'>薛之谦</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>2</span>
+		<span class='music'>后来</span>
+		<span class='singer'>刘若英</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>3</span>
+		<span class='music'>夜夜夜夜</span>
+		<span class='singer'>齐秦</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>4</span>
+		<span class='music'>明年今日</span>
+		<span class='singer'>陈奕迅</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>5</span>
+		<span class='music'>岁月如歌</span>
+		<span class='singer'>陈奕迅</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>6</span>
+		<span class='music'>我的未来不是梦</span>
+		<span class='singer'>张雨生</span>
+		</li>
+	</ul>
+</body>
+</html>
