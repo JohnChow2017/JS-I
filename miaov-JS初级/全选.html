@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#wrap{width: 334px; height: 232px; margin: 30px auto; border: 1px solid #e0e0e0;}
+	ul{margin: 0; padding: 0;}
+	span{font-size:15px; color: #0000cc;}
+	li{list-style: none; border-bottom: 1px solid #f3f3f3; line-height: 32px; 
+		margin-left: 24px;}
+	li:last-child{border:none;}
+	input{margin: 0;}
+	#toolbar li{border-bottom: 1px solid #f3f3f3}
+	
+	.number, #check{color: #666695; padding-left: 18px; display: inline-block;}
+	.music{margin-left: 30px; display: inline-block; width: 110px;}
+	.singer{margin-left: 40px; display: inline-block; width: 48px;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oList=document.getElementById('list');
+		var aLi=oList.getElementsByTagName('li');
+		var oToolbar=document.getElementById('toolbar');
+		var aCheckbox=oList.getElementsByTagName('input');
+		var oCheckAll=oToolbar.getElementsByTagName('input')[0];
+
+		var arrcolor=[];
+		var flag=0;
+
+		//隔行换色
+		for(var i=0; i<aLi.length; i++){
+			if(i % 2){
+				aLi[i].style.background='#fff';
+			}
+			else{
+				aLi[i].style.background='#F7FFFF';
+			}
+			arrcolor[i]=aLi[i].style.background;
+		}
+
+		for(var i=0; i<aCheckbox.length; i++){
+			aCheckbox[i].index=i;
+
+			aCheckbox[i].onclick=function(){
+				flag=0;
+
+				for(var i=0; i<aCheckbox.length; i++){
+					flag+=Number(aCheckbox[i].checked);
+				}
+				if(flag==aCheckbox.length){
+					oCheckAll.checked=true;
+				}
+				else{
+					oCheckAll.checked=false;
+				}
+
+				if(this.checked){
+					aLi[this.index].style.background='#eee';
+				}
+				else{
+					aLi[this.index].style.background=arrcolor[this.index]
+				}
+			}
+		}
+
+		//移入变色
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+
+			aLi[i].onmouseover=function(){
+				aLi[this.index].style.background='#eee';
+			}
+			aLi[i].onmouseout=function(){
+				if(!aCheckbox[this.index].checked){
+					aLi[this.index].style.background=arrcolor[this.index];
+				}
+			}
+		}
+
+		//全选
+		oCheckAll.onclick=function(){
+			if(oCheckAll.checked){
+				for(var i=0; i<aCheckbox.length; i++){
+					aCheckbox[i].checked=true;
+					aLi[i].style.background='#eee';
+					}
+				}
+				else{
+					for(var i=0; i<aCheckbox.length; i++){
+						
+						aCheckbox[i].checked=false;
+						aLi[i].style.background=arrcolor[i];
+					}
+				}
+			
+		}
+	} 
+
+	</script>
+</head>
+<body>
+	<div id="wrap">
+	<ul id="toolbar">
+		<li>
+		<input type="checkbox" />
+		<span id='check'>全选</span>
+		</li>
+	</ul>
+	<ul id="list">
+		<li>
+		<input type="checkbox" />
+		<span class='number'>1</span>
+		<span class='music'>你还要我怎样</span>
+		<span class='singer'>薛之谦</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>2</span>
+		<span class='music'>后来</span>
+		<span class='singer'>刘若英</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>3</span>
+		<span class='music'>夜夜夜夜</span>
+		<span class='singer'>齐秦</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>4</span>
+		<span class='music'>明年今日</span>
+		<span class='singer'>陈奕迅</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>5</span>
+		<span class='music'>岁月如歌</span>
+		<span class='singer'>陈奕迅</span>
+		</li>
+		<li>
+		<input type="checkbox" />
+		<span class='number'>6</span>
+		<span class='music'>我的未来不是梦</span>
+		<span class='singer'>张雨生</span>
+		</li>
+	</ul>
+	</div>
+</body>
+</html>
