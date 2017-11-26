@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body, ul{padding: 0; margin: 0;}
+	li, #nav div{list-style: none; float: left; line-height: 30px;}
+	a{text-decoration: none; color: #3C6EA8; padding: 0 15px; 
+		border-right: 1px solid #8F77C3;}
+	a:hover{text-decoration: underline;}
+	a:last-child{border-right: none;}
+
+	ul{background: #E3ECF1; border-radius: 10px; overflow: hidden; display: none;}
+
+	#header{width: 450px; margin: 10px auto;}
+
+	#nav{background: #4273A5; width: 450px; height: 30px; border-radius: 20px;
+		margin: 10px auto;  padding: 4px 10px; display: block}
+	#nav a{color: #fff;  display: block; border-radius: 10px;
+		padding: 0 30px;}
+	#nav a:hover{background: #7B9CC6; text-decoration: none;}
+
+	#home{position:relative; width: 250px; left: 10px;}
+	#aboutUs{position:relative; width: 210px; left: 80px;}
+	#showCase{position:relative; width: 140px; left: 200px;}
+	#blog{position:relative; width: 200px; left: 260px;}
+
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oNav=document.getElementById('nav');
+		var aNav=oNav.getElementsByTagName('a');
+		var aUl=document.getElementsByTagName('ul');
+		var timer=null;
+		
+		for(var i=0; i<aNav.length; i++){
+			aNav[i].index=i;
+			aUl[i].index=i;
+			
+			//鼠标移入主菜单
+			aNav[i].onmouseover=function(){
+				for(var j=0; j<aNav.length; j++){
+					aUl[j].style.display='none';
+				}
+				aUl[this.index].style.display='block';
+
+				clearTimeout(timer);
+			}
+			//鼠标移出主菜单
+			aNav[i].onmouseout=function(){
+				var that=this.index;
+				timer=setTimeout(function(){
+					aUl[that].style.display='none';
+				}, 200)
+				
+			}
+			//鼠标移入子菜单
+			aUl[i].onmouseover=function(){
+				this.style.display='block';
+				clearTimeout(timer);
+			}
+			//鼠标移出子菜单
+			aUl[i].onmouseout=function(){
+				var that=this;
+				timer=setTimeout(function(){
+					that.style.display='none';
+				}, 500)
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+<div id="header">
+	<div id="nav">
+		<div><a href="javascript:">首页</a></div>
+		<div><a href="javascript:">关于我们</a></div>
+		<div><a href="javascript:">作品</a></div>
+		<div><a href="javascript:">博客</a></div>
+	</div>
+	<ul id="home">
+		<li><a href="#">最近更新</a></li>
+		<li><a href="#">活动</a></li>
+		<li><a href="#">报名</a></li>
+	</ul>
+	<ul id="aboutUs">
+		<li><a href="#">团队理念</a></li>
+		<li><a href="#">关于我们</a></li>
+	</ul>
+	<ul id="showCase">
+		<li><a href="#">整站</a></li>
+		<li><a href="#">仿qq</a></li>
+	</ul>
+	<ul id="blog">
+		<li><a href="#">个人博客</a></li>
+		<li><a href="#">官方博客</a></li>
+	</ul>
+</div>
+</body>
+</html>

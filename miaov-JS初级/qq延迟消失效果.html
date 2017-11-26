@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#main{background: url(img/qq面板.png); width:281px; height:697px;
+		position: relative;}
+	#bar{background:url(img/qq弹出.png); width:277px; height:100px;
+		position: absolute; left: 290px; top: 220px; display: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oMian=document.getElementById('main');
+		var oBar=document.getElementById('bar');
+
+		oMian.onmouseover=function(){
+			
+			oBar.style.display='block';
+		}
+		oMian.onmouseout=function(){
+			
+			hiden();
+		}
+		oBar.onmouseover=function(){
+			clearTimeout(timer);
+		}
+		oBar.onmouseout=function(){
+			hiden();
+		}
+
+		function hiden(){
+			timer=setTimeout(function(){
+				oBar.style.display='none';
+			},300)
+		}
+		
+	}
+	</script>
+</head>
+<body>
+	<div id="main"></div>
+	<div id="bar"></div>
+</body>
+</html>
