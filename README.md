@@ -90,6 +90,12 @@
 28.（作业）全选
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/全选) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%85%A8%E9%80%89.html)<br>
 
+29.（作业）qq延迟消失效果
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/qq延迟消失效果) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/qq%E5%BB%B6%E8%BF%9F%E6%B6%88%E5%A4%B1%E6%95%88%E6%9E%9C.html)<br>
+
+30.（作业）延时消失菜单
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/延时消失菜单) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%BB%B6%E6%97%B6%E6%B6%88%E5%A4%B1%E8%8F%9C%E5%8D%95.html)<br>
+
 
 ## NOTES
 ####
