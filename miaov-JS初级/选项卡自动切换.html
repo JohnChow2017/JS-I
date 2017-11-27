@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	div, ul{padding: 0; margin: 0; list-style: none;}
+	#nav{width: 300px; border:1px solid #000; margin: 10px auto; padding: 5px;}
+	#tab{width: 250px; height: 30px;}
+	#tab li{width: 100px; line-height: 30px; font-size: 15px; color: #000;;
+			background: #eee; float: left; margin-right: 2px; text-align: center;
+		}
+	#tab .active{background: red;}
+	.box{overflow: hidden; display: none;}
+	.box img{width: 202px; height: 150px; float: left;}
+	.box ul{float: left;}
+	.box ul li{height: 47px; background: #eee; border:1px solid #fff;
+				line-height: 50px; font-size: 20px; padding: 0 10px;}
+	.box .active{background: yellow;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oNav=document.getElementById('nav');
+		var oTab=document.getElementById('tab');
+		var aTab=oTab.getElementsByTagName('li');
+		var aDiv=oNav.getElementsByTagName('div');
+
+		var num=0;
+		var iNow=0;
+		var arrpic=[['img/pic2.jpg','img/pic5.jpg','img/pic6.jpg',],
+					['img/pic3.jpg','img/pic4.jpg','img/pic8.jpg',]];
+
+		setInterval(function(){
+			num++;
+			if(num==3){ 
+				num=0;   //图片切换
+
+				// if(iNow==0){
+				// 	iNow=1;
+				// }
+				// else{
+				// 	iNow=0;
+				// }
+				iNow = iNow==0?1:0;
+			}
+			var aLi=aDiv[iNow].getElementsByTagName('li');
+			var oImg=aDiv[iNow].getElementsByTagName('img')[0];
+
+			//导航
+			for(var i=0; i<aTab.length; i++){ //先清空
+				aTab[i].className='';
+				aDiv[i].style.display='none';
+			}
+			//再操作
+				aTab[iNow].className='active';
+				aDiv[iNow].style.display='block';
+
+			//下面的div
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].className='';
+			}
+			aLi[num].className='active';
+			oImg.src=arrpic[iNow][num];
+		},1200)
+	}
+	</script>
+</head>
+<body>
+	<div id="nav">
+		<ul id="tab">
+			<li class="active">菜单一</li>
+			<li>菜单二</li>
+		</ul>
+		<div class="box" style="display:block">
+			<img src="img/pic2.jpg" />
+			<ul>
+				<li class="active">猫咪1</li>
+				<li>猫咪2</li>
+				<li>猫咪3</li>
+			</ul>
+		</div>
+		<div class="box">
+			<img src="img/pic3.jpg"/>
+			<ul>
+				<li class="active">狗狗1</li>
+				<li>狗狗2</li>
+				<li>狗狗3</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
