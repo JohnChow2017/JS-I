@@ -99,6 +99,9 @@
 31.（作业）选项卡自动切换
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/选项卡自动切换) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E9%80%89%E9%A1%B9%E5%8D%A1%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2.html)<br>
 
+32.（作业）淘宝商品广告
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/淘宝商品广告) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81%E5%B9%BF%E5%91%8A.html)<br>
+
 
 ## NOTES
 ####
