@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body,ul{margin: 0; padding: 0;}
+	img{border:0; float: left; width: 145px; height: 115px;}
+	li{list-style: none; border:1px solid red; width: 40px;
+		padding: 5px; text-align: center; font-size: 12px; margin: 1px 0}
+	a{text-decoration: none; color: #000}
+
+	#wrap{width: 250px; border:1px solid red; padding: 5px; margin: 20px auto;
+			overflow: hidden;}
+	#left{float: left;}
+	#right{float: left;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oWrap=document.getElementById('wrap');
+		var oLeft=document.getElementById('left');
+		var oRight=document.getElementById('right');
+		var oImg=oWrap.getElementsByTagName('img')[0];
+		var aLi=document.getElementsByTagName('li');
+		var arrImg=['img/pic3.jpg','img/pic4.jpg','img/pic7.jpg','img/pic8.jpg','img/pic1.jpg','img/pic2.jpg','img/pic5.jpg','img/pic6.jpg'];
+
+		var num=0;
+
+		function clear(){  //全部清空
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].style.background='#fff';
+				aLi[i].getElementsByTagName('a')[0].style.color='#000';
+			}
+		}
+		//自动轮换
+		function play(){
+			clear();    //先清空
+
+			//初始化
+			aLi[num].style.background='pink';
+			aLi[num].getElementsByTagName('a')[0].style.color='#fff';
+			oImg.src=arrImg[num];
+
+			//两侧切换
+			if(num<aLi.length/2){
+				num++;
+				if(num==aLi.length/2){
+					num=aLi.length-1;
+				}
+			}
+			else{
+				num--;
+				if(num==aLi.length/2-1){
+					num=0;
+				}
+			}
+		}
+		timer=setInterval(play, 1000);
+
+		//鼠标移入移出
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				clearInterval(timer);
+				clear();
+				this.style.background='pink';
+				this.getElementsByTagName('a')[0].color='#fff';
+				oImg.src=arrImg[this.index];
+			}
+			aLi[i].onmouseout=function(){
+				this.style.background='#fff';
+				this.getElementsByTagName('a')[0].color='#000';
+				timer=setInterval(play, 1000);
+			}
+		}
+
+
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<ul id="left">
+			<li><a href="#">狗狗1</a></li>
+			<li><a href="#">狗狗2</a></li>
+			<li><a href="#">狗狗3</a></li>
+			<li><a href="#">狗狗4</a></li>
+		</ul>
+		<img src="img/pic3.jpg" />
+		<ul id="right">
+			<li><a href="#">猫猫1</a></li>
+			<li><a href="#">猫猫2</a></li>
+			<li><a href="#">猫猫3</a></li>
+			<li><a href="#">猫猫4</a></li>
+		</ul>
+	</div>
+</body>
+</html>
