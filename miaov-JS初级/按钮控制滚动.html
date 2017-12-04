@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	body,h2,h3,p,ul{margin: 0; padding: 0}
+	li{list-style: none;}
+ 	h2{width: 170px; background: skyblue; color: #fff; font-size: 14px; padding: 5px; 
+ 		margin: 20px auto 0 auto; text-align: center;}
+ 	#wrap{width: 160px; height: 450px; background: #fff; overflow: hidden; 
+ 		padding:20px 10px; margin: 0 auto; border-left: 1px solid #eee;
+		border-right: 1px solid #eee;border-bottom: 1px solid #eee;
+ 		position: relative;}
+ 	#wrap h3{font-size: 14px; line-height: 28px;}
+ 	#wrap ul{position: relative; top: 0;}
+ 	#wrap li{border-bottom: 1px solid #000; padding-bottom: 5px; position: relative; height: 70px; padding: 5px 0;}
+ 	#wrap img{width: 80px; height: 60px; position: absolute; top: 5px; right: 5px;}
+ 	#wrap div p{width: 160px; height: 20px; text-align: center;}
+ 	#wrap p{font-size: 12px; width: 80px;}
+ 	#toTop, #toButtom{position: absolute; width: 180px; height: 20px; cursor: pointer;
+ 						background: #eee; z-index: 1; left: 0; text-align: center; padding-left: 10px}
+ 	#toTop{top: 0;}
+ 	#toButtom{bottom: 0;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oUp=document.getElementById('toTop');
+		var oDown=document.getElementById('toButtom');
+		var oUl=document.getElementsByTagName('ul')[0];
+
+		var timerUp=null;
+		var timerDown=null;
+
+		oUp.onmouseover = oDown.onmouseover=function(){
+			this.style.background='#E7EFEF';
+		}
+		oUp.onmouseout = oDown.onmouseout=function(){
+			this.style.background='#eee';
+		}
+		
+		//获取样式函数
+		function getStyle(obj, attr){
+			return obj.currentStyle ? obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+		}
+
+		oUp.onmousedown=function(){
+			timerUp=setInterval(function(){
+				if(parseInt(getStyle(oUl, 'top'))>-180){
+					oUl.style.top=parseInt(getStyle(oUl,'top'))-10+'px';
+				}else{
+					oUl.style.top='-180px';
+				}
+			}, 100)
+		}
+		oUp.onmouseup=function(){
+			clearInterval(timerUp);
+		}
+
+		oDown.onmousedown=function(){
+			timerDown=setInterval(function(){
+				if(parseInt(getStyle(oUl, 'top'))<0){
+					oUl.style.top=parseInt(getStyle(oUl, 'top'))+20+'px';
+				}else{
+					oUl.style.top='0px';
+				}
+			}, 100)
+		}
+		oDown.onmouseup=function(){
+			clearInterval(timerDown);
+		}
+	}
+</script>
+<body>
+	<h2>萌宠集锦</h2>
+	<div id="wrap">
+		<div id="toTop"><p>∧</p></div>
+		<ul>
+			<li>
+				<h3>编号1</h3>
+				<p>简介：......</p>
+				<img src="img/pic1.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号2</h3>
+				<p>简介：......</p>
+				<img src="img/pic2.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号3</h3>
+				<p>简介：......</p>
+				<img src="img/pic3.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号4</h3>
+				<p>简介：......</p>
+				<img src="img/pic4.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号5</h3>
+				<p>简介：......</p>
+				<img src="img/pic5.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号6</h3>
+				<p>简介：......</p>
+				<img src="img/pic6.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号7</h3>
+				<p>简介：......</p>
+				<img src="img/pic7.jpg" alt="" />
+			</li>
+			<li>
+				<h3>编号8</h3>
+				<p>简介：......</p>
+				<img src="img/pic8.jpg" alt="" />
+			</li>
+		</ul>
+		<div id="toButtom"><p>∨</p></div>
+	</div>
+</body>
+</html>
