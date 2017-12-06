@@ -105,5 +105,11 @@
 33.（作业）按钮控制滚动
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/按钮控制滚动) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8C%89%E9%92%AE%E6%8E%A7%E5%88%B6%E6%BB%9A%E5%8A%A8.html)<br>
 
+34.定时器的应用-运动的div
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/定时器的应用-运动的div) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A8-%E8%BF%90%E5%8A%A8%E7%9A%84div.html)<br>
+
+35.定时器的应用-运动的div4
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/定时器的应用-运动的div4) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A84-%E8%BF%90%E5%8A%A8%E7%9A%84div.html)<br>
+
 ## NOTES
 ####
