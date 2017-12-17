@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		var oImg=document.getElementsByTagName('img')[0];
+
+		//getStyle
+		function getStyle(obj, attr){
+			return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+		}
+
+		oImg.onclick=function(){
+			shake(oImg, 'left', function(){shake(oImg,'top')});
+		 }
+		
+	
+	function shake(obj, attr,endFn){
+			if(obj.shake){return}
+			obj.shake=true;
+
+			var pos=parseInt(getStyle(obj, attr));
+			var arr=[]; 
+			var timer=null;
+			var num=0;
+
+
+			for(var i=20; i>0; i-=2){
+				arr.push(i, -i);
+			}
+			arr.push(0);
+
+			clearInterval(obj.shaketimer);
+			obj.shaketimer=setInterval(function(){
+				obj.style[attr]=pos+arr[num]+'px';
+				num++;
+				if(num===arr.length){
+					clearInterval(obj.shaketimer);
+					endFn&&endFn();
+					obj.shake=false;
+				}
+			}, 50)
+	}
+}
+</script>
+<body>
+	<img src="img/pic7.jpg" style="width:300px; top:50px; left:200px; position:absolute;" />
+</body>
+</html>
