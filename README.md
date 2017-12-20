@@ -117,5 +117,8 @@
 37.定时器的应用6-抖动
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/抖动动画) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8A%96%E5%8A%A8%E5%8A%A8%E7%94%BB.html)<br>
 
+38.定时器的应用7-点击加分
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/点击加分) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%82%B9%E5%87%BB%E5%8A%A0%E5%88%86.html)<br>
+
 ## NOTES
 ####
