@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	img{border:none;
+		margin: 0;
+		padding: 0;
+		width: 600px;
+		height: 400px;
+		}
+
+	#showbox{
+		width: 600px;
+		height: 400px;
+		margin: 50px auto;
+		border:2px solid #000;
+
+		position: relative;
+		overflow: hidden;}
+
+	#wrap{width: 3600px;
+		  position: absolute;
+		  left: 0;
+		  font-size: 0;}	
+
+	h1{ margin: 0;
+		padding: 0;
+		font-size: 24px;
+		line-height: 36px;
+		padding: 5px;}
+
+	p{  padding: 5px;
+		margin: 0;
+		font-size: 12px;
+		line-height: 20px;
+		padding-bottom: 10px;
+		}
+	#text{position: absolute;
+		  width: 600px;
+		  top: 400px;
+		  left: 0;}
+
+	#text div{position: absolute;
+			top: 0;
+			left: 0;
+			width: 600px;
+			background: #000;
+			opacity: 0.7;
+			color: #fff;}
+
+	</style>
+	<script type="text/javascript">
+	
+
+
+		function getStyle(obj, attr){
+			return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+		}
+
+		function doMove(obj, attr, dir, time, target, endFn){ //对象，属性，位移，时间间隔，目的地，回调
+			dir=parseInt(getStyle(obj, attr))>target?-dir:dir;
+
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var speed=parseInt(getStyle(obj, attr))+dir;
+
+				if(speed>target&&dir>0 || speed<target&&dir<0){
+					speed=target;
+				}
+
+				obj.style[attr]=speed+'px';
+				if(speed==target){
+					clearInterval(obj.timer);
+					endFn&&endFn();
+				}
+			}, time);
+		}
+
+		window.onload=function(){
+
+		var oWrap=document.getElementById('wrap');
+		var aImg=oWrap.getElementsByTagName('img');
+		var oText=document.getElementById('text');
+		var aDiv=oText.getElementsByTagName('div');
+
+		var num=0;
+		var timer=null;
+
+		doMove(aDiv[0], 'top', 20, 50, -98, function(){
+			setTimeout(function(){
+				doMove(aDiv[num], 'top', 20, 50, 0);
+			}, 1500)
+		});
+
+		timer = setInterval(function(){
+				var target = -600 * (num + 1);
+				doMove(oWrap, 'left', 20, 20, target, function(){
+
+					doMove(aDiv[num], 'top', 20, 50, -97, function(){
+
+						setTimeout(function(){
+							doMove(aDiv[num], 'top', 20, 50, 0);
+
+							if(num == aImg.length - 1) {
+								oWrap.style.left = 0;
+								num = 0;
+							}
+
+						}, 1500)
+							
+					});
+						
+				});
+				num ++;
+			}, 3000);
+	}
+	</script>
+</head>
+<body>
+	<div id="showbox">
+		<div id="wrap">
+			<img src="img/pic3.jpg" alt="" />
+			<img src="img/pic4.jpg" alt="" />
+			<img src="img/pic5.jpg" alt="" />
+			<img src="img/pic6.jpg" alt="" />
+			<img src="img/pic7.jpg" alt="" />
+			<img src="img/pic3.jpg" alt="" />
+		</div>
+		<div id="text">
+			<div>
+				<h1>可爱的动物1</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+			<div>
+				<h1>可爱的动物2</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+			<div>
+				<h1>可爱的动物3</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+			<div>
+				<h1>可爱的动物4</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+			<div>
+				<h1>可爱的动物5</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+			<div>
+				<h1>可爱的动物1</h1>
+				<p>动物是人类的精神食粮，也是人类的物质食粮，人与动物是共存亡的，没有了动物也就没有了人类，反正人和动物是不可分割的。</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
