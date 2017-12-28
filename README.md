@@ -120,5 +120,8 @@
 38.定时器的应用7-点击加分
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/点击加分) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%82%B9%E5%87%BB%E5%8A%A0%E5%88%86.html)<br>
 
+39.定时器的应用8-图片自动切换
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/图片自动切换) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2.html)<br>
+
 ## NOTES
 ####
