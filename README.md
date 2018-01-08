@@ -126,5 +126,11 @@
 40.定时器的应用9-timer图片切换
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/自动切换3) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A23.html)<br>
 
+41.日期对象-数字时钟
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/系统时间) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4.html)<br>
+
+42.日期对象-数字时钟（动画版）
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/系统时间（动画版）) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%EF%BC%88%E5%8A%A8%E7%94%BB%E7%89%88%EF%BC%89.html)<br>
+
 ## NOTES
 ####
