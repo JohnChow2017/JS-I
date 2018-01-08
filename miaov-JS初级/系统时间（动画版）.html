@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	html,body,ul{margin: 0; padding: 0}
+	ul{margin: 20px auto; width: 480px; font-size: 0;}
+	li{list-style: none; display: inline-block; width: 60px; height: 80px; position: relative; overflow: hidden;} /*布局很重要，限制宽度，将第二张图片挤到下面一行*/
+	li div{position: absolute; top: 0; left: 0}
+	img{width: 60px; height: 80px}
+</style>
+<script type="text/javascript">
+	function getStyle(obj, attr){
+		return obj.currentStyle ? obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+	}
+
+	function doMove(obj,attr,dir,target,endFn){
+		dir=parseInt(getStyle(obj,attr))>target? -dir:dir;
+
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var speed=parseInt(getStyle(obj,attr))+dir;
+
+			if(speed>target&&dir>0 || speed<target&&dir<0){
+				speed=target;
+			}
+			obj.style[attr]=speed+'px';
+
+			if(speed==target){
+				clearInterval(obj.timer);
+				endFn&&endFn();
+			}
+		}, 30);
+	}
+
+	window.onload=function(){
+		var oUl=document.getElementsByTagName('ul')[0];
+		var	aLi=oUl.getElementsByTagName('li');
+
+		function toNum(n){
+			return n<10 ? '0'+n : ''+n;
+		}
+
+		function fnTime(){
+			var iTime= new Date();
+			var iHours=iTime.getHours();
+			var iMinutes=iTime.getMinutes();
+			var iSeconds=iTime.getSeconds();
+			var str=toNum(iHours)+':'+toNum(iMinutes)+':'+toNum(iSeconds); 
+		
+
+			function fn(li, num){
+				var oDiv=li.getElementsByTagName('div')[0];
+				var aImg=oDiv.getElementsByTagName('img');
+
+				if(str.charAt(num)===':'){
+					aImg[0].src='img/colon.jpg';
+					setTimeout(function(){
+						aImg[0].src='img/colon-1.jpg';
+					},500)
+				}else{
+					aImg[1].src='img/'+str.charAt(num)+'.jpg';
+					if(aImg[0].src != aImg[1].src){
+						doMove(oDiv,'top',10, -80,function(){
+							aImg[0].src=aImg[1].src;
+							oDiv.style.top=0+'px';
+						})
+					}
+
+				}			
+			}
+			for(var i=0; i<aLi.length; i++){
+					fn(aLi[i], i);
+				}
+			
+		}
+		setInterval(fnTime,1000);
+		
+		
+	}
+</script>
+<body>
+	<ul>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/colon.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/colon.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="img/0.jpg" alt="" />
+				<img src="img/0.jpg" alt="" />
+			</div>
+		</li>
+	</ul>
+
+</body>
+</html>

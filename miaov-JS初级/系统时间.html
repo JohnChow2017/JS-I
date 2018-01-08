@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Time</title>
+</head>
+<style type="text/css">
+	img{width: 50px;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oP=document.getElementsByTagName('p')[0],
+			aImg=document.getElementsByTagName('img'),
+		    arrImg=['img/0.JPG','img/1.JPG','img/2.JPG','img/3.JPG','img/4.JPG','img/5.JPG','img/6.JPG','img/7.JPG','img/8.JPG','img/9.JPG'];
+		
+		function runTime(){
+			var iTime=new Date(),
+
+			iYear=iTime.getFullYear(),
+			iMonth=iTime.getMonth()+1,
+			iDay=iTime.getDay(),
+			iDate=iTime.getDate(),
+			iHours=iTime.getHours(),
+			iMinutes=iTime.getMinutes(),
+			iSeconds=iTime.getSeconds(),
+			str='',
+			str2='';
+
+			if(iDay==0)iDay='星期一';
+			if(iDay==1)iDay='星期二';
+			if(iDay==2)iDay='星期三';
+			if(iDay==3)iDay='星期四';
+			if(iDay==4)iDay='星期五';
+			if(iDay==5)iDay='星期六';
+			if(iDay==6)iDay='星期日';
+
+			str=iYear+'年'+iMonth+'月'+iDate+'日'+' '+iDay+' '+toTwo(iHours)+':'+toTwo(iMinutes)+':'+toTwo(iSeconds);
+			
+
+			str2=toTwo(iHours)+toTwo(iMinutes)+toTwo(iSeconds);
+			oP.innerHTML=str;
+
+			aImg[0].src=arrImg[str2.charAt(0)];
+			aImg[1].src=arrImg[str2.charAt(1)];
+			aImg[3].src=arrImg[str2.charAt(2)];
+			aImg[4].src=arrImg[str2.charAt(3)];
+			aImg[6].src=arrImg[str2.charAt(4)];
+			aImg[7].src=arrImg[str2.charAt(5)];
+
+		}
+		function toTwo(n){
+			return n>9? ''+n:'0'+n; 
+		}
+		runTime();
+		setInterval(runTime, 1000);
+		
+		
+	}
+
+</script>
+<body>
+	<p></p>
+	<img src="img/0.JPG" alt="" />
+	<img src="img/0.JPG" alt="" />
+	<img src="img/colon.JPG" alt="" />
+	<img src="img/0.JPG" alt="" />
+	<img src="img/0.JPG" alt="" />
+	<img src="img/colon.JPG" alt="" />
+	<img src="img/0.JPG" alt="" />
+	<img src="img/0.JPG" alt="" />
+</body>
+</html>
