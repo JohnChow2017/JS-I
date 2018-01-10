@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		var oP=document.getElementsByTagName('p')[0];
+		var oSpan=document.getElementsByTagName('span')[0];
+		var oA=document.getElementsByTagName('a')[0];
+		var str=oSpan.innerHTML;
+		var off=true;
+
+		oA.onclick=function(){
+			if(off){
+				oSpan.innerHTML=str.substring(0,20);
+			oA.innerHTML='>>展开';
+			}else{
+				oSpan.innerHTML=str;
+				oA.innerHTML='>>收缩';
+			}off=!off;
+			
+		}
+	}
+</script>
+<body>
+	<div>
+		<p><span>中世纪时的巴黎，还没有完备的下水系统，很多居民都把粪便之类的垃圾从城墙上往下倒。久而久之，在城外形成了一个大屎堆。后来，统治者不得不加高城墙，因为屎堆已经和城墙平齐了，敌军不用攻城门，直接踩着屎堆就可以进城了。维多利亚时代的很多人认为大小便时发出的声音是很尴尬的，就有人造出一种特殊的马桶。使用的时候会播放音乐，掩盖排泄的声音。但这也会欲盖弥彰，邻居一听你家在放音乐，就知道你在做什么了。在你的心上，自由的飞翔。19世纪中期的法国司法部长皮南德是个一本正经的道德标兵。他曾逮捕了一个做便壶的人，因为那人制造的一批便壶底部画着一只大大的眼睛，旁边一行字:我看到你了。皮南德认为这种恶趣味就是罪过，判处了那个人一个月监禁。古罗马皇帝克劳多斯手下有位大臣，和克劳多斯交谈的时候腹痛不止，但是他硬忍着不说，最后死掉了。克劳多斯知道事情原委之后，宣布以后再有类似的事情可以尽情的放屁，不会受到处罚。古埃及的法老们对民众宣称自己是神的后裔，其中有一位法老为了维护自己神灵的形象，坚决不能让人知道他和凡人一样也要拉翔，也有翔这种肮脏的东西。他都是每天凌晨趁大家都睡觉的时候跑出去到沙漠里去解决，然后在人们还没醒的时候再回来</span>......<a href="javascript:;">>>收缩</a></p>
+	</div>
+</body>
+</html>
