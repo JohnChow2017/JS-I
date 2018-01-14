@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 700px; height: 200px; background: #eee; padding: 30px;
+			border: 2px solid yellow; margin-top: 20px;}
+		input{margin-left: 20px;}
+		span{background: yellow;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aInput=document.getElementsByTagName('input');
+			var oDiv=document.getElementsByTagName('div')[0];
+			
+
+			aInput[1].onclick=function(){
+				var str=aInput[0].value;
+
+				if(!str){
+					return;
+				}else{
+				oDiv.innerHTML=oDiv.innerHTML.split(str).join('<span>'+str+'</span>');
+				}
+			}
+
+			aInput[4].onclick=function(){
+				var str2=aInput[2].value;
+				var str3=aInput[3].value;
+				if(!str2 && !str3)return;
+				oDiv.innerHTML=oDiv.innerHTML.split(str2).join('<span>'+str3+'</span>');
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<input type="text" name="" value="" />
+	<input type="button" name="" value="查找" />
+	<br />
+	<input type="text" name="" value="" />
+	<input type="text" name="" value="" />
+	<input type="button" name="" value="替换" />
+
+
+	<div>根据严歌苓同名小说改编，讲述了上世纪七十到八十年代充满理想和激情的军队文工团，一群正值芳华的青春少年，经历着成长中的爱情萌发与充斥变数的人生命运。乐于助人、质朴善良的刘峰（黄轩 饰），和从农村来，屡遭文工团女兵歧视与排斥的何小萍（苗苗 饰），“意外”离开了浪漫安逸的文工团，卷入了残酷的战争，在战场上继续绽放着血染的芳华。他们感受着集体生活的痛与暖、故人的分别与重逢，还有时代变革之下，每个人的渺小脆弱和无力招架。而昔日的文工团战友萧穗子（钟楚曦 饰）、林丁丁（杨采钰 饰）、郝淑雯（李晓峰 饰）、陈灿（王天辰 饰）等人，在大时代的背景之下，每个人的命运大相径庭，拥有着出人意料的人生归宿……从来不需要想起，永远也不会忘记。</div>
+</body>
+</html>

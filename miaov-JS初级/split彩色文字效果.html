@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 350px; height: 200px; background: #eee;
+			border: 1px solid yellow;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementsByTagName('div')[0];
+			var oInput=document.getElementsByTagName('input');
+			var arrColor=['yellow','pink','green','blue'];
+
+			oInput[1].onclick=function(){
+				var str=oInput[0].value;
+				var arr=str.split('');
+
+				for(var i=0; i<arr.length; i++){
+					arr[i]='<span style="background:'+arrColor[i%arrColor.length]+'; width:20px; height:20px; display:inline-block; text-align:center">'+arr[i]+'</span>';
+				}
+
+				oDiv.innerHTML=arr.join('');
+
+
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div></div>
+
+	<input id='ipt1' type="text" name="" />
+	<input id='ipt2' type="button" name="" value="按钮" />
+</body>
+</html>
