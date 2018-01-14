@@ -134,6 +134,12 @@
 
 43.字符串方法-展开收缩
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/字符串方法示例（展开收缩）) [【代码】](https://github.com/JohnChow2017/Demo/tree/master/miaov-JS%E5%88%9D%E7%BA%A7)<br>
+
+44.字符串方法-高亮显示关键字实例、替换搜索关键字
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/高亮显示关键字实例、替换搜索关键字) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E4%BE%8B%E3%80%81%E6%9B%BF%E6%8D%A2%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E5%AD%97.html)<br>
+
+45.字符串方法-split彩色文字效果
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/split彩色文字效果) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/split%E5%BD%A9%E8%89%B2%E6%96%87%E5%AD%97%E6%95%88%E6%9E%9C.html)<br>
  
 ## NOTES
 ####
