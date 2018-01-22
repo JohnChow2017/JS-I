@@ -140,6 +140,10 @@
 
 45.字符串方法-split彩色文字效果
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/split彩色文字效果) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/split%E5%BD%A9%E8%89%B2%E6%96%87%E5%AD%97%E6%95%88%E6%9E%9C.html)<br>
+
+
+45.字符串方法-文字搬运工
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/文字搬运工) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%96%87%E5%AD%97%E6%90%AC%E8%BF%90%E5%B7%A5.html)<br>
  
 ## NOTES
 ####
