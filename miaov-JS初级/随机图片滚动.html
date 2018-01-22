@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html, body, ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		ul {
+			width: 220px;
+			margin: 50px auto;
+		}
+		li {
+			display: inline-block;
+			width: 100px;
+			height: 50px;
+			font-size: 0;
+			overflow: hidden;
+			position: relative;
+		}
+		div {
+			position: absolute;
+			top: 0px;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		//doMove
+		function doMove(obj, attr, dir, target, endFn){
+			dir=parseInt(getStyle(obj,attr))<target?dir:-dir;
+
+			clearInterval(obj.timer);
+
+			
+			obj.timer=setInterval(function(){
+				var speed=parseInt(getStyle(obj,attr))+dir;
+
+				if(speed>target&&dir>0 || speed<target&&dir<0){
+					speed=target;
+				}
+				obj.style[attr]=speed+'px';
+				if(speed==target){
+					clearInterval(obj.timer);
+					endFn&&endFn();
+				}
+
+			}, 30);
+		}
+		//getStyle
+		function getStyle(obj, attr){
+			return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+		}
+
+		window.onload=function(){
+
+			var aLi=document.getElementsByTagName('li');
+			var flag=0;
+
+			for(var i=0; i<aLi.length; i++){
+				fn(aLi[i]);
+			}
+
+			function fn(li){
+				var oDiv=li.getElementsByTagName('div')[0];
+
+				function fnmove(){
+					setTimeout(function(){
+						flag= flag ==0?-50:0;
+						doMove(oDiv,'top',10,flag,fnmove)
+					},Math.round(Math.random()*3000+1000));
+				}
+				fnmove();
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>
+			<div><img src="img/12-img/1.jpg" alt=""><img src="img/12-img/2.jpg" alt=""></div>
+		</li>
+		<li>
+			<div><img src="img/12-img/3.jpg" alt=""><img src="img/12-img/4.jpg" alt=""></div>
+		</li>
+		<li>
+			<div><img src="img/12-img/5.jpg" alt=""><img src="img/12-img/6.jpg" alt=""></div>
+		</li>
+		<li>
+			<div><img src="img/12-img/7.jpg" alt=""><img src="img/12-img/8.jpg" alt=""></div>
+		</li>
+	</ul>
+</body>
+</html>
