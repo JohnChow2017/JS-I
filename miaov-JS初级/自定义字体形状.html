@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	    body{margin: 0; padding: 0}
+		#wrap{background: url(img/qq-bg.png) 0 0 no-repeat; width:350px; height: 501px; border:1px solid;
+				margin: 10px auto; position: relative;}
+		#showbox{position: absolute; top: 50px; left: 75px; width:240px; height:330px;}
+		select{position:absolute; top: 399px; left: 85px; }
+		textarea{position: absolute; bottom: 0; left: 75px; width:268px; height:75px;}
+		input{position: absolute; bottom: 2px; right: 2px; width: 50px; height: 3px}
+
+		#showbox div{width:20px; display: inline-block; font-size: 16px; margin: 2px 0;}
+		div img{width: 20px; height: 20px}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementsByTagName('input')[0];
+			var oShowBox=document.getElementById('showbox');
+			var oText=document.getElementsByTagName('textarea')[0];
+			var oSelect=document.getElementsByTagName('select')[0];
+
+			var json={
+					'smile':'img/emoji-face_1.png',
+					'cry':'img/emoji-face_2.png'
+			};
+
+			oBtn.onclick=function(){
+				var str=oText.value;
+
+				if(!str){
+					alert('请输入文字后点击发送按钮');
+				}
+				if(oSelect.value=='default'){
+					oShowBox.innerHTML +=str+ '<br />';
+					oText.value='';
+				}
+
+				for(attr in json){
+					fontStyle(attr, json[attr], str)
+				}
+
+				function fontStyle(fontType, url, str){
+					if(oSelect.value==fontType){
+						var arr=str.split('');
+						str='';
+						for(var i=0; i<arr.length; i++){
+							str+='<div><img src=" '+url+' "><span>'+arr[i]+'</span></div>'
+						}
+						oShowBox.innerHTML+= str+'<br />';
+						oText.value='';
+
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="showbox"></div>
+		<select>
+			<option value="default">默认</option>
+			<option value="smile">微笑</option>
+			<option value="cry">哭笑不得</option>
+		</select>
+		<textarea></textarea>
+		<input type="button" name="" value="发送" />
+	</div>
+</body>
+</html>

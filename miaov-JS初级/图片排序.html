@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body, ul, h2{margin: 0; padding: 0}
+		li{list-style: none;}
+		#btn{width:1000px; height: 60px; background: #f1f1f1; margin: 0 auto; text-align: center;}
+		#btn li{display: inline-block; background: pink; padding: 8px 20px; font-size: 14px; font-weight: bold;
+				margin-top: 12px; cursor: pointer;}
+		#btn li:hover{opacity: 0.5}
+
+		#showbox{width:980px; margin: 0 auto; background: #f1f1f1; overflow: hidden; padding: 10px}
+		#showbox li{float: left; padding: 10px; background: #fff; border: 1px solid #f1f1f1}
+		#showbox li img{width: 200px; height: 180px}
+		h2{font-size: 16px; font-weight: bold; color: #000; text-align: center; background: #f1f1f1; padding-top: 5px; padding-bottom: 5px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aBtn=document.getElementById('btn').getElementsByTagName('li');
+			var oShowbox=document.getElementById('showbox');
+			var aLi=oShowbox.getElementsByTagName('li');
+
+			var flag=true;
+			var arr=[];
+			var str='';
+
+			for(var i=0; i<aLi.length; i++){
+				arr.push(aLi[i]);
+			}
+
+			aBtn[0].onclick=function(){
+				arr.reverse();
+				str='';
+				for(var i=0; i<arr.length; i++){
+					str+='<li>'+arr[i].innerHTML+'</li>';
+				}
+				oShowbox.innerHTML=str;
+
+				this.innerHTML=flag? '从小到大':'从大到小';
+				flag=!flag;
+
+			}
+
+			aBtn[1].onclick=function(){
+				var arr2=[];
+				for(var i=0; i<aLi.length; i++){
+					arr2.push(aLi[i]);
+				}
+				arr2.sort(function(a,b){
+					return Math.random()-0.5;
+				})
+
+				str='';
+				for(var i=0; i<arr2.length; i++){
+					str+='<li>'+arr2[i].innerHTML+'</li>';
+				}
+				oShowbox.innerHTML=str;
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="btn">
+		<li>从小到大</li>
+		<li>打乱顺序</li>
+	</ul>
+	<ul id="showbox">
+		<li>
+			<img src="img/pic1.jpg" alt="" />
+			<h2>图片1</h2>
+		</li>
+		<li>
+			<img src="img/pic2.jpg" alt="" />
+			<h2>图片2</h2>
+		</li>
+		<li>
+			<img src="img/pic3.jpg" alt="" />
+			<h2>图片3</h2>
+		</li>
+		<li>
+			<img src="img/pic4.jpg" alt="" />
+			<h2>图片4</h2>
+		</li>
+		<li>
+			<img src="img/pic5.jpg" alt="" />
+			<h2>图片5</h2>
+		</li>
+		<li>
+			<img src="img/pic6.jpg" alt="" />
+			<h2>图片6</h2>
+		</li>
+		<li>
+			<img src="img/pic7.jpg" alt="" />
+			<h2>图片7</h2>
+		</li>
+		<li>
+			<img src="img/pic8.jpg" alt="" />
+			<h2>图片8</h2>
+		</li>
+	</ul>
+</body>
+</html>
