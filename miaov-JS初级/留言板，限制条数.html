@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl=document.getElementsByTagName('ul')[0];
+			var oTxt=document.getElementsByTagName('input')[0];
+			var oBtn=document.getElementsByTagName('input')[1];
+			var n=5; //限制条数
+
+			oBtn.onclick=function(){
+				var aLi=document.createElement('li');
+				aLi.innerHTML=oTxt.value;
+
+				if(!oTxt.value){
+					alert('请输入内容');
+					return;
+				}
+
+				if(oUl.children[0]){
+					oUl.insertBefore(aLi, oUl.children[0]);
+				}else{
+					oUl.appendChild(aLi);
+				}
+				if(oUl.children[n]){
+					oUl.removeChild(oUl.children[n]);
+				}
+
+				oTxt.value='';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" />
+	<input type="button" name="" value="留言" />
+	<ul></ul>
+</body>
+</html>

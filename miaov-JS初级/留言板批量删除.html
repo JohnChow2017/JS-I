@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*li{display: block;}*/
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt=document.getElementsByTagName('input')[0];
+			var oBtn=document.getElementsByTagName('input')[1];
+			var oDelete=document.getElementsByTagName('input')[2];
+			var oUl=document.getElementsByTagName('ul')[0];
+
+			var off=true;
+
+			oBtn.onclick=function(){
+				var aLi=document.createElement('li');
+				aLi.innerHTML=oTxt.value;
+
+				if(!oTxt.value){
+					alert('请输入留言内容');
+					return;
+				}
+				
+				if(oUl.children[0]){
+					oUl.insertBefore(aLi, oUl.children[0])
+				}
+				else{
+					oUl.appendChild(aLi);
+				}
+
+				oTxt.value='';
+
+				if(aLi){
+					for(var i=0; i<oUl.children.length; i++){
+
+						oUl.children[i].onclick=function(){
+							if(off){
+								this.style.background='yellow';
+								this.mark='1';
+							}else{
+								this.style.background='';
+							}
+							off=!off;
+						}
+					}
+				}
+
+				oDelete.onclick=function(){
+					for(var i=0; i<oUl.children.length; i++){
+						if(oUl.children[i].mark){
+							oUl.removeChild(oUl.children[i]);
+							i--;
+						}
+					}
+					
+				}
+
+				
+				
+
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" />
+	<input type="button" name="" value="留言" />
+	<input type="button" name="" value="批量删除" />
+	<ul></ul>
+</body>
+</html>
