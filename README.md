@@ -153,6 +153,16 @@
  
  48.数组方法-图片排序
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/图片排序) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E5%9B%BE%E7%89%87%E6%8E%92%E5%BA%8F.html)<br>
+
+49.DOM操作-留言板
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/留言板，限制条数) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%95%99%E8%A8%80%E6%9D%BF%EF%BC%8C%E9%99%90%E5%88%B6%E6%9D%A1%E6%95%B0.html)<br>
+
+
+50.DOM操作-留言板批量删除
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/留言板批量删除) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E7%95%99%E8%A8%80%E6%9D%BF%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4.html)<br>
+ 
+51.DOM操作-getElementsByTagName增强
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/getElementsByTagName增强) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/getElementsByTagName%E5%A2%9E%E5%BC%BA.html)<br>
  
 ## NOTES
 ####
