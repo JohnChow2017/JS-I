@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#btn1{position: fixed; bottom: 0; right: 0;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var timer=null;
+			var bSys=true; //检测是否是系统让滚动条滚动
+
+
+			//如何检测用户拖动了滚动条
+			window.onscroll=function(){
+				if(!bSys){ //如果是用户滚动的就清楚定时器
+					clearInterval(timer);
+				}
+				bSys=false;
+			}
+
+			oBtn.onclick=function(){
+				timer=setInterval(function(){
+					var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+					var iSpeed=Math.floor(-scrollTop/8);
+
+					if(scrollTop==0){
+						clearInterval(timer);
+					}
+
+					bSys=true;
+
+					document.documentElement.scrollTop=document.body.scrollTop=scrollTop+iSpeed;
+				},30);
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px;">
+
+	<input id='btn1' type="button" name="" value="回到顶部" />
+</body>
+</html>
