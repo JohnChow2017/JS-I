@@ -169,6 +169,31 @@
 
 53.BOM\DOM操作-返回顶部
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/返回顶部) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8.html)<br>
+
+54.DOM操作-隔行变色
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/DOM操作-隔行变色) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/DOM%E6%93%8D%E4%BD%9C-%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2.html)<br>
+
+55.DOM操作-增删表格
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/DOM表格操作-增删表格) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/DOM%E8%A1%A8%E6%A0%BC%E6%93%8D%E4%BD%9C-%E5%A2%9E%E5%88%A0%E8%A1%A8%E6%A0%BC.html)<br>
+
+56.DOM操作-表格搜索
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/DOM表格操作-搜索) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/DOM%E8%A1%A8%E6%A0%BC%E6%93%8D%E4%BD%9C-%E6%90%9C%E7%B4%A2.html)<br>
+
+57.DOM操作-移动li1
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/排序1-移动li) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8E%92%E5%BA%8F1-%E7%A7%BB%E5%8A%A8li.html)<br>
+
+58.DOM操作-移动li2
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/排序2-移动li) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8E%92%E5%BA%8F2-%E7%A7%BB%E5%8A%A8li.html)<br>
+
+59.DOM操作-排序li
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/排序li) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8E%92%E5%BA%8Fli.html)<br>
+
+60.DOM操作-表格排序
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/排序3-表格排序) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E6%8E%92%E5%BA%8F3-%E8%A1%A8%E6%A0%BC%E6%8E%92%E5%BA%8F.html)<br>
+
+61.DOM操作-表单校验
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/表单1) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E8%A1%A8%E5%8D%951.html)<br>
+
  
 ## NOTES
 ####
