@@ -164,5 +164,11 @@
 51.DOM操作-getElementsByTagName增强
 [【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/getElementsByTagName增强) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/getElementsByTagName%E5%A2%9E%E5%BC%BA.html)<br>
  
+52.BOM\DOM操作-侧边栏广告
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/侧边栏广告) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%B9%BF%E5%91%8A.html)<br>
+
+53.BOM\DOM操作-返回顶部
+[【在线预览】](https://johnchow2017.github.io/Demo/miaov-JS初级/返回顶部) [【代码】](https://github.com/JohnChow2017/Demo/blob/master/miaov-JS%E5%88%9D%E7%BA%A7/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8.html)<br>
+ 
 ## NOTES
 ####
