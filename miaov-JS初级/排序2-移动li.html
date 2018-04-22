@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#ul1{background: red}
+		#ul2{background: yellow}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var oUl1=document.getElementById('ul1');
+
+			oBtn.onclick=function(){
+				var aLi=oUl1.getElementsByTagName('li');
+
+				//appendChild
+				//第一步：先从原来的父级里面摘除掉
+				//第二步：添加到新的父级里面
+
+				oUl1.appendChild(aLi[0]);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id='btn1' type="button" name="" value="移动li">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	
+</body>
+</html>

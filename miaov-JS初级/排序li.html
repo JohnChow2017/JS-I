@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var oUl1=document.getElementById('ul1');
+			var aLi=oUl1.getElementsByTagName('li');
+
+			//1.转成数组
+			var arr=[];
+			for(var i=0; i<aLi.length; i++){
+				arr[i]=aLi[i];
+			}
+
+			oBtn.onclick=function(){
+				//2.数组排序
+				arr.sort(function(li1, li2){
+					return parseInt(li1.innerHTML)-parseInt(li2.innerHTML);
+				})
+				//3.重新插入
+				for(var i=0; i<arr.length; i++){
+				oUl1.appendChild(arr[i])
+				}
+			}
+
+
+		}
+	</script>
+</head>
+<body>
+	<input id='btn1' type="button" name="" value="移动li">
+	<ul id="ul1">
+		<li>13</li>
+		<li>299</li>
+		<li>3</li>
+		<li>40</li>
+		<li>25</li>
+	</ul>
+	
+</body>
+</html>

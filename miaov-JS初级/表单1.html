@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oForm=document.getElementById('form1');
+			var oUser=document.getElementsByName('user')[0];
+			var oPass=document.getElementsByName('pass')[0];
+
+			oForm.onsubmit=function(){
+				if(oUser.value=='' || oPass.value==''){
+					alert('您有项目没填写');
+					return false;
+				}
+			}
+
+			oForm.onreset=function(){
+				// if(confirm('确认清空吗？')){
+				// 	return true;
+				// }
+				// else{
+				// 	return false;
+				// }
+				return confirm('确认清空吗？');
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<form id="form1" action="http://www.baidu.com/" method="get">
+		 用户名：<input type="text" name="user" />
+		 密码：<input type="password" name="pass" />
+		 <input type="submit" name="" value="提交" />
+		 <input type="reset" name="" value="重置" />
+	</form>
+</body>
+</html>
